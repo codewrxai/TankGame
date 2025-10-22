@@ -1,0 +1,20 @@
+using System;
+using UnityEditor;
+using UnityEngine;
+
+/**
+* Editor Script Component
+* @class MuteButton
+*/
+[Babylon(Class="PROJECT.DefaultMuteButton"), AddComponentMenu(CanvasToolsStatics.CANVAS_TOOLS_MENU + "/Content Components/Sound/Default Mute Button", 1001)]
+
+public class DefaultMuteButton : EditorScriptComponent
+{
+  [Auto] public string buttonIdentifier = "mute-button";
+  [Auto] public string buttonClassname = "mute-button-active";
+  [Auto] public string buttonContainer = "button-container";
+  [Auto] public string mutedIconUrl = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAD7SURBVHgBlZQBEcIwDEU7DgFIqAQkzAlFAXOwogAJmwMkDAeggKEAcFAaSO/+pR3L/l2OpPv3yIdtxixQCGGMdYpl4ayl0gI66JMIumNQ0nYWRC6Y61h9yOVUIITBtQFAXg0Sm1kRLUXe4OpYncwAsBdGgw2bZJgV+1oE8VnD86CGhTxaDbFJ4xKYlIfoX1G/MnrtoX8XHcpNnPBa+PNIV5rXsS6CX8svrKqqh/EY5wf3jj9vZmLTs1wLrjXQW7mpBLWljAXfJvxuVlI3B3JcGYx/pwS6Z1uFwg3J507EHMCnByEQetIzlg/peRRmPwUqeA9FiDD9f7Ep9QGM7qoz64fsJgAAAABJRU5ErkJggg==";
+  [Auto] public string muteIconUrl = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKaSURBVHgBlVO/axRBFH4zO4GgTcp07hmbaIhELMXsCWIjmBAbSZGNqKApYv6CXP4BUVIIgu6lslE8K38gbgSxsNmYBFLIuadYCDZJY253Zt7zzZ0bL3hRM+zszJv33rffe/OtgH2M6+8+p5nBGlq4Uy2XGp0++a/k2fdfomJviXwEMZsRxROv0qn/Brr6thFllsLCRqSyRVpCAh8tRuef1ecLn9gLZDJOox4JoeCI6HRpV9zFF/VKhjSvLUFTm/Ly+OByV0YTL+sRB4XMBjJDO+djceq79dG5gYpFUTFMDYX3IIiSPnHy4UaglIJe1Q4+0CumPIDQkwL4Acfo8dmBFqOx5/UUtmW5Nt5udFD7GOcWA6tpThmAWJIFjQIU88u0JCUFeUiiACpGZtFHRTFvSy1b26cGxChjXJCG6WsEyrkEbQFyg8JNLotcac2O0lyZDuzUk43A2duGapwvuA2HpMF2suZ6c07m6dZ2EjvzDiD9y2eMHHX2yqXBhrbI51hSORIpvjwiEuiB8BjYSCCuTkh+saODEUuAbf7mVnGWcxXMg5T7IjEASRcE4PEquT+MQpJpA/wGahrbwuWLqDn7SLQWuCpY6R8Us3/jgl0AcmcNUeA5gQm2HC2inXbnxjloYW3yaKPdfDGFhC5k5Q9B+vfXQ640EoJBREuxoh4ea8UdjtZvfpoeuu32/XcTHzyVcovAI1Pqquz+e6uhJ2TkmDIgfL0ytCuujwXYk3kJg/jcjurmzPB0V2V/uzZczbVlZQN1KrsFspgE8EMmfO6zP23mdsGd7/nTfr9xfMlYc9lJoBgHF1djDfI135TPM7XGnmnOjTT+CuTG5swIM8PpwtYGA77lLf4tFpqIJwqQfQ95K5mFStLXzfcT0oGTdgMAE4EAAAAASUVORK5CYII=";
+  [Auto] public bool toggleEffects = true;
+  [Auto] public AudioSource[] autoPlayList = null;
+}

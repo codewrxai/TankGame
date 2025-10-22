@@ -1,0 +1,82 @@
+# Unity .gitignore
+# Recommended ignores for Unity projects
+
+# -------------------------------
+# Unity generated folders
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Mm]emoryCaptures/
+
+# User-specific files
+/UserSettings/
+
+# Crash reports
+sysinfo.txt
+
+# -------------------------------
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# -------------------------------
+# Node
+/node_modules/
+package-lock.json
+
+# -------------------------------
+# Visual Studio / Rider / VSCode
+/.vscode/
+/.vs/
+/.idea/
+*.sln.iml
+
+# Visual Studio temporary files and generated files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userosscache
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# -------------------------------
+# Build outputs
+*.apk
+*.aab
+*.xcodeproj/
+*.xcworkspace/
+*.xcuserstate
+*.app
+
+# -------------------------------
+# Unity Addressables and cache
+/Library/com.unity.addressables/**/bundled_data
+
+# -------------------------------
+# Thumbnails and exported object caches
+/ExportedObj/
+
+# -------------------------------
+# Temporary/backup files
+*~
+*.tmp
+*.bak
+*.orig
+
+# -------------------------------
+# Keep these project folders tracked: Assets/ and ProjectSettings/
+# End of .gitignore
+Assets/\[Config\]/license.json
+Assets/\[Config\]/license.json.meta

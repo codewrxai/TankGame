@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "target": "ESNEXT",
+        "module": "none",
+        "lib": [
+            "es5",
+            "dom",
+            "esnext",
+            "es2015.promise",
+            "es2015.collection",
+            "es2015.iterable",
+            "es2015.symbol.wellknown",
+            "es2020.bigint"
+        ],
+        "allowJs": false,
+        "declaration": true,
+        "skipLibCheck": true,
+        "strictNullChecks": false,
+        "noImplicitAny": false,
+        "inlineSources": true,
+        "inlineSourceMap": true,
+        "outFile": "e:/unitywork3/codewrx/unity-game-the-survivor-tank-master/the survivor tank/debug/thesurvivortank.js"
+    },
+    "include": [
+        "packages/**/*.d.ts",
+        "library/**/*.d.ts",
+        "assets/**/*.d.ts",
+        "assets/**/*"
+    ]    
+}
