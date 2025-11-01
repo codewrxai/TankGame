@@ -2,25 +2,43 @@ namespace PROJECT {
   export class ScoreManager extends TOOLKIT.ScriptComponent {
     public static score: number = 0; // The player's score.
 
-  private text: BABYLON.GUI.TextBlock; // Reference to the Babylon.js GUI TextBlock.
+    private scoreText: BABYLON.GUI.TextBlock; // GUI TextBlock for score display
+    private advancedTexture: BABYLON.GUI.AdvancedDynamicTexture; // UI texture
 
     constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties: any = {}, alias: string = "PROJECT.ScoreManager") {
       super(transform, scene, properties, alias);
     }
 
     protected awake(): void {
-      // Set up the reference to a Babylon.js GUI TextBlock named "ScoreText" (adjust name as needed)
-      let advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(this.transform as BABYLON.Mesh);
-      this.text = advancedTexture.getControlByName("ScoreText") as BABYLON.GUI.TextBlock;
+      // Create fullscreen UI
+      this.advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("ScoreUI", true, this.scene);
+      
+      // Create Score Text - Top Left
+      this.scoreText = new BABYLON.GUI.TextBlock("ScoreText");
+      this.scoreText.text = "SCORE: 0";
+      this.scoreText.color = "white";
+      this.scoreText.fontSize = 32; // Reduced from 48 to 32
+      this.scoreText.fontWeight = "bold";
+      this.scoreText.textHorizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;
+      this.scoreText.textVerticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;
+      this.scoreText.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;
+      this.scoreText.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;
+      this.scoreText.left = 20;
+      this.scoreText.top = 40; // Moved down from 20 to 40
+      this.scoreText.width = "300px"; // Reduced from 400px to 300px
+      this.scoreText.height = "50px"; // Reduced from 60px to 50px
+      this.advancedTexture.addControl(this.scoreText);
 
-      // Reset the score.
+      // Reset the score
       PROJECT.ScoreManager.score = 0;
+      
+      console.log("ScoreManager: UI created successfully!");
     }
 
     protected update(): void {
-      // Set the displayed text to be the word "Score" followed by the score value.
-      if (this.text) {
-        this.text.text = "Score: " + PROJECT.ScoreManager.score;
+      // Update the score display
+      if (this.scoreText) {
+        this.scoreText.text = "SCORE: " + PROJECT.ScoreManager.score;
       }
     }
   }

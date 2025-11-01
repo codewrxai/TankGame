@@ -46,24 +46,51 @@ namespace PROJECT {
             direction.normalize();
             
             // Create target rotation from direction
-            let targetRotation = BABYLON.Quaternion.FromLookDirectionLH(direction, BABYLON.Vector3.Up());
+            // Use FromLookDirectionRH for correct rotation (Babylon uses right-handed)
+            let targetRotation = BABYLON.Quaternion.RotationYawPitchRoll(
+              Math.atan2(direction.x, direction.z),
+              0,
+              0
+            );
             
-            // The step size is equal to speed times frame time (convert degrees to radians)
-            let step = this.rotateSpeed * this.getDeltaTime() * (Math.PI / 180);
+            // The step size - faster rotation for more responsive aiming
+            let rotationSpeed = this.rotateSpeed * this.getDeltaTime();
             
             // Get current rotation
-            let current = this.transform.rotationQuaternion || BABYLON.Quaternion.FromEulerAngles(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z);
-            
-            // Rotate our transform a step closer to the target's using Slerp
-            let newRotation = BABYLON.Quaternion.Slerp(current, targetRotation, Math.min(1.0, step));
-            
             if (!this.transform.rotationQuaternion) {
-              this.transform.rotationQuaternion = BABYLON.Quaternion.Identity();
+              this.transform.rotationQuaternion = BABYLON.Quaternion.FromEulerAngles(
+                this.transform.rotation.x, 
+                this.transform.rotation.y, 
+                this.transform.rotation.z
+              );
             }
-            this.transform.rotationQuaternion = newRotation;
+            
+            // Smoothly rotate towards target
+            this.transform.rotationQuaternion = BABYLON.Quaternion.Slerp(
+              this.transform.rotationQuaternion,
+              targetRotation,
+              Math.min(1.0, rotationSpeed * 0.1)
+            );
+            
+            // Check if enemy is facing the player (within acceptable angle threshold)
+            // Get current forward direction
+            let currentForward = new BABYLON.Vector3(0, 0, 1);
+            let rotationMatrix = new BABYLON.Matrix();
+            BABYLON.Matrix.FromQuaternionToRef(this.transform.rotationQuaternion, rotationMatrix);
+            currentForward = BABYLON.Vector3.TransformNormal(currentForward, rotationMatrix);
+            currentForward.normalize();
+            
+            // Calculate angle between forward and direction to player
+            let dot = BABYLON.Vector3.Dot(currentForward, direction);
+            // Clamp dot product to avoid Math.acos errors
+            dot = Math.max(-1, Math.min(1, dot));
+            let angleInDegrees = Math.acos(dot) * (180 / Math.PI);
+            
+            // Only set isPlayerInRange to true if facing within 25 degrees (more forgiving)
+            this.isPlayerInRange = angleInDegrees < 25;
+          } else {
+            this.isPlayerInRange = false;
           }
-          
-          this.isPlayerInRange = true;
         } else {
           // Set the destination of the nav mesh agent to the player
           if (this.nav) {
@@ -77,6 +104,7 @@ namespace PROJECT {
           // Stop navigation by setting destination to current position
           this.nav.setDestination(this.transform.position);
         }
+        this.isPlayerInRange = false;
       }
     }
   }

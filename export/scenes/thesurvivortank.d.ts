@@ -101,6 +101,7 @@ declare namespace PROJECT {
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
         protected start(): void;
         protected update(): void;
+        private disposeLights;
     }
 }
 declare namespace PROJECT {
@@ -109,6 +110,7 @@ declare namespace PROJECT {
         private player;
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
         protected start(): void;
+        private disposeLights;
         private findTheClosestSpawnPoint;
     }
 }
@@ -121,6 +123,7 @@ declare namespace PROJECT {
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
         protected start(): void;
         private moveToNextDest;
+        private disposeLights;
     }
 }
 declare namespace PROJECT {
@@ -130,10 +133,14 @@ declare namespace PROJECT {
         timeToFollow: number;
         private player;
         private timer;
+        private hasAddedPhysics;
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
         protected start(): void;
         private followPlayerCoroutine;
+        private addPhysicsBody;
         protected update(): void;
+        private destroyWithCleanup;
+        private disposeLights;
     }
 }
 declare namespace PROJECT {
@@ -144,6 +151,7 @@ declare namespace PROJECT {
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
         protected start(): void;
         update(): void;
+        private disposeLights;
     }
 }
 declare namespace PROJECT {
@@ -159,6 +167,7 @@ declare namespace PROJECT {
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
         protected start(): void;
         private explosion;
+        private disposeLights;
     }
 }
 declare namespace PROJECT {
@@ -203,17 +212,25 @@ declare namespace PROJECT {
     class GameOverManager extends TOOLKIT.ScriptComponent {
         playerHealth: PROJECT.PlayerHealth;
         private anim;
+        private advancedTexture;
+        private gameOverText;
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
         protected awake(): void;
+        private createGameOverUI;
         protected start(): void;
         private checkGameOver;
     }
 }
 declare namespace PROJECT {
     class PauseManager extends TOOLKIT.ScriptComponent {
-        private canvas;
+        private advancedTexture;
+        private pausePanel;
+        private pauseText;
+        private resumeButton;
+        private quitButton;
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
-        protected start(): void;
+        protected awake(): void;
+        private createPauseMenuUI;
         protected update(): void;
         pause(): void;
         private lowpass;
@@ -223,7 +240,8 @@ declare namespace PROJECT {
 declare namespace PROJECT {
     class ScoreManager extends TOOLKIT.ScriptComponent {
         static score: number;
-        private text;
+        private scoreText;
+        private advancedTexture;
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
         protected awake(): void;
         protected update(): void;
@@ -236,26 +254,30 @@ declare namespace PROJECT {
         private hitAudio;
         private isDestroyed;
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
-        protected awake(): void;
+        protected start(): void;
         private handleCollision;
+        private scheduleParticleCleanup;
     }
 }
 declare namespace PROJECT {
     class PlayerHealth extends TOOLKIT.ScriptComponent {
         startingHealth: number;
         currentHealth: number;
-        healthSlider: BABYLON.GUI.Slider;
-        damageImage: BABYLON.GUI.Image;
         deathClip: BABYLON.Sound;
         flashSpeed: number;
-        flashColour: BABYLON.Color4;
         private playerMovement;
         private playerShooting;
         private isDamaged;
         private isDead;
         private isInvulnerable;
+        private advancedTexture;
+        private healthSlider;
+        private healthBackground;
+        private damageFlash;
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
         protected awake(): void;
+        private createHealthUI;
+        private updateHealthDisplay;
         protected update(): void;
         takeDamage(amount: number): void;
         addShield(time: number): void;

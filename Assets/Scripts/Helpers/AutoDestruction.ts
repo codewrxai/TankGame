@@ -8,7 +8,11 @@ namespace PROJECT {
 
     protected async start(): Promise<void> {
       await TOOLKIT.SceneManager.WaitForSeconds(this.timeToDie);
-      this.transform.dispose();
+      
+      // Check if transform still exists before disposing
+      if (this.transform && !this.transform.isDisposed()) {
+        TOOLKIT.SceneManager.SafeDestroy(this.transform);
+      }
     }
   }
 }

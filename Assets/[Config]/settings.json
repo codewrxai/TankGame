@@ -145,7 +145,7 @@
   "NavigationBaking": 0,
   "SimpleMaterialNames": true,
   "ExportMeshInstances": true,
-  "CubemapConverterType": 0,
+  "CubemapConverterType": 1,
   "CustomWindowsSandbox": "",
   "ShowRenderStats": false,
   "SceneRenderStats": 0,

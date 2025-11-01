@@ -37,27 +37,34 @@ namespace PROJECT {
       }
       let bulletContainer = SM.GetAssetContainer(this.scene, "playerbullet.glb");
       const spawnPointPosition = this.bulletSpawnPoint.getAbsolutePosition();
-      console.log("Spawn Point Position:", spawnPointPosition);
+      
+      // Calculate spawn position far outside player collider to avoid collision
+      const forwardDirection = TOOLKIT.Utilities.GetForwardVector(this.transform);
       const spawnOffset = new BABYLON.Vector3(0, 1.3, 0);
-      let bulletClone: BABYLON.TransformNode = SM.InstantiatePrefabFromContainer(bulletContainer, "PlayerBullet","PlayerBullet_Clone",null,spawnPointPosition.add(spawnOffset),BABYLON.Quaternion.Identity());
+      const forwardOffset = forwardDirection.scale(2); // 2 units forward to clear collider
+      const finalSpawnPosition = spawnPointPosition.add(spawnOffset).add(forwardOffset);
+      
+      let bulletClone: BABYLON.TransformNode = SM.InstantiatePrefabFromContainer(
+        bulletContainer, 
+        "PlayerBullet",
+        "PlayerBullet_Clone",
+        null,
+        finalSpawnPosition,
+        BABYLON.Quaternion.Identity()
+      );
+      
       if (!bulletClone) {
         SM.ConsoleError("PlayerShooting: Failed to instantiate 'PlayerBullet' prefab.");
         return;
       }
 
-      // Nudge the bullet forward to avoid collision with player
-      const forwardNudge = TOOLKIT.Utilities.GetForwardVector(this.transform).scale(2);
-      bulletClone.position.addInPlace(forwardNudge);
-
       // Apply impulse for projectile motion
       const rigidbody = bulletClone.physicsBody;
       if (rigidbody) {
-        const forwardDirection = TOOLKIT.Utilities.GetForwardVector(this.transform);
         rigidbody.applyImpulse(forwardDirection.scale(this.bulletForce), bulletClone.getAbsolutePosition());
       } else {
         TOOLKIT.SceneManager.ConsoleWarn("PlayerShooting: Instantiated bullet is missing a physicsBody. Check the prefab in Unity.");
       }
-      console.log("bulletClone position after impulse:", bulletClone.getAbsolutePosition()); 
     }
 
     // ... (rest of the class is the same)

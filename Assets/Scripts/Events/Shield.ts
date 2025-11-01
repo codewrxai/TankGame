@@ -10,7 +10,6 @@ namespace PROJECT {
     }
 
     protected start(): void {
-      console.log("Shield: start() called, setting up trigger events");
       this.nav = TOOLKIT.SceneManager.GetComponent(this.transform, "TOOLKIT.NavigationAgent") as TOOLKIT.NavigationAgent;
       const spawnPointsScript = TOOLKIT.SceneManager.SearchForScriptComponentByName(this.scene, "PROJECT.ShieldSpawnPoints") as TOOLKIT.ScriptComponent;
       this.spawnPoints = spawnPointsScript ? spawnPointsScript.transform : null;
@@ -19,29 +18,19 @@ namespace PROJECT {
       // Enable collision events for triggers
       this.enableCollisionEvents();
       
-      // Debug: Check if physicsBody exists
-      if (this.transform.physicsBody) {
-        console.log("Shield: physicsBody exists", this.transform.physicsBody);
-      } else {
-        console.warn("Shield: No physicsBody found!");
-      }
-      
       // Subscribe to trigger enter observable
       this.onTriggerEnterObservable.add((other: BABYLON.TransformNode) => {
-        console.log("Shield: Trigger entered by:", other.name, "Tag:", TOOLKIT.SceneManager.GetTransformTag(other));
-        
         if (TOOLKIT.SceneManager.GetTransformTag(other) === "Player") {
-          console.log("Shield: Player detected, adding shield");
           let playerHealth = TOOLKIT.SceneManager.GetComponent(other, "PROJECT.PlayerHealth") as PROJECT.PlayerHealth;
           if (playerHealth && playerHealth.currentHealth > 0) {
             playerHealth.addShield(this.timeToShield);
-            console.log("Shield: Shield added to player, destroying shield");
           }
+          
+          // Dispose lights before destroying
+          this.disposeLights();
           TOOLKIT.SceneManager.SafeDestroy(this.transform);
         }
       });
-      
-      console.log("Shield: Trigger observable setup complete");
     }
 
     private async moveToNextDest(): Promise<void> {
@@ -54,6 +43,44 @@ namespace PROJECT {
       await TOOLKIT.SceneManager.WaitForSeconds(this.timeToNextDest);
 
       this.moveToNextDest();
+    }
+
+    private disposeLights(): void {
+      if (!this.transform || this.transform.isDisposed()) return;
+      
+      try {
+        const allLights = this.scene.lights.slice();
+        
+        for (let light of allLights) {
+          try {
+            let lightNode = light as any;
+            if (lightNode.parent === this.transform) {
+              light.setEnabled(false);
+              setTimeout(() => {
+                if (!light.isDisposed()) {
+                  light.dispose();
+                }
+              }, 0);
+            }
+          } catch (e) {}
+        }
+        
+        const children = this.transform.getChildren();
+        for (let child of children) {
+          for (let light of this.scene.lights.slice()) {
+            try {
+              if (light === child || (light as any).parent === child) {
+                light.setEnabled(false);
+                setTimeout(() => {
+                  if (!light.isDisposed()) {
+                    light.dispose();
+                  }
+                }, 0);
+              }
+            } catch (e) {}
+          }
+        }
+      } catch (e) {}
     }
   }
 }

@@ -80,11 +80,8 @@ namespace PROJECT {
         // setTimeout(() => { explosionInstance.dispose(); }, 2000);
       }
 
-      TOOLKIT.SceneManager.SafeDestroy(this.transform);
-
       // If the player is inside the trigger, damage the player
       if (this.isPlayerInsideExplosionArea) {
-        console.log("TNT: Player was in explosion area, applying damage and speed reduction");
         let playerHealth = TOOLKIT.SceneManager.GetComponent(this.player, "PROJECT.PlayerHealth") as PROJECT.PlayerHealth;
         if (playerHealth) {
           playerHealth.takeDamage(this.damageOfExplosion);
@@ -94,6 +91,48 @@ namespace PROJECT {
           }
         }
       }
+      
+      // Dispose lights before destroying
+      this.disposeLights();
+      TOOLKIT.SceneManager.SafeDestroy(this.transform);
+    }
+
+    private disposeLights(): void {
+      if (!this.transform || this.transform.isDisposed()) return;
+      
+      try {
+        const allLights = this.scene.lights.slice();
+        
+        for (let light of allLights) {
+          try {
+            let lightNode = light as any;
+            if (lightNode.parent === this.transform) {
+              light.setEnabled(false);
+              setTimeout(() => {
+                if (!light.isDisposed()) {
+                  light.dispose();
+                }
+              }, 0);
+            }
+          } catch (e) {}
+        }
+        
+        const children = this.transform.getChildren();
+        for (let childNode of children) {
+          for (let light of this.scene.lights.slice()) {
+            try {
+              if (light === childNode || (light as any).parent === childNode) {
+                light.setEnabled(false);
+                setTimeout(() => {
+                  if (!light.isDisposed()) {
+                    light.dispose();
+                  }
+                }, 0);
+              }
+            } catch (e) {}
+          }
+        }
+      } catch (e) {}
     }
   }
 }

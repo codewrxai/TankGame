@@ -60,7 +60,7 @@ namespace PROJECT {
       }
 
       // Increase the score by the enemy's score value.
-      (window as any).ScoreManager.score += this.scoreValue;
+      PROJECT.ScoreManager.score += this.scoreValue;
 
       // After 3 seconds destroy the enemy.
       await TOOLKIT.SceneManager.WaitForSeconds(3.0);

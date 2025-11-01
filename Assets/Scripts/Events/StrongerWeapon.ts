@@ -26,20 +26,19 @@ namespace PROJECT {
         console.log("StrongerWeapon: Trigger entered by:", other.name, "Tag:", TOOLKIT.SceneManager.GetTransformTag(other));
         
         if (TOOLKIT.SceneManager.GetTransformTag(other) === "Player") {
-          console.log("StrongerWeapon: Player detected, giving stronger weapon");
           const playerHealth: PROJECT.PlayerHealth = TOOLKIT.SceneManager.GetComponent(other, "PROJECT.PlayerHealth") as PROJECT.PlayerHealth;
           if (playerHealth && playerHealth.currentHealth > 0) {
             const playerShooting: PROJECT.PlayerShooting = TOOLKIT.SceneManager.GetComponent(other, "PROJECT.PlayerShooting") as PROJECT.PlayerShooting;
             if (playerShooting) {
               playerShooting.getStrongerWeapon(this.timeToStrongerWeapon);
-              console.log("StrongerWeapon: Weapon upgraded, destroying powerup");
             }
           }
+          
+          // Dispose lights BEFORE destroying transform
+          this.disposeLights();
           TOOLKIT.SceneManager.SafeDestroy(this.transform);
         }
       });
-      
-      console.log("StrongerWeapon: Trigger observable setup complete");
     }
 
     public update(): void {
@@ -48,6 +47,55 @@ namespace PROJECT {
       const newY: number = Math.sin(performance.now() * 0.001 * this.speed) * this.height + 1.0;
       const pos: BABYLON.Vector3 = this.transform.position.clone();
       this.transform.position = new BABYLON.Vector3(pos.x, newY, pos.z);
+    }
+
+    private disposeLights(): void {
+      if (!this.transform || this.transform.isDisposed()) return;
+      
+      try {
+        // Get all lights in the scene
+        const allLights = this.scene.lights.slice();
+        
+        for (let light of allLights) {
+          try {
+            // Check if light is a child of this transform or attached to it
+            let lightNode = light as any;
+            if (lightNode.parent === this.transform) {
+              // Disable the light first to stop rendering
+              light.setEnabled(false);
+              // Wait a frame before disposing
+              setTimeout(() => {
+                if (!light.isDisposed()) {
+                  light.dispose();
+                }
+              }, 0);
+            }
+          } catch (e) {
+            // Ignore errors for individual lights
+          }
+        }
+        
+        // Also check children nodes
+        const children = this.transform.getChildren();
+        for (let childNode of children) {
+          for (let light of this.scene.lights.slice()) {
+            try {
+              if (light === childNode || (light as any).parent === childNode) {
+                light.setEnabled(false);
+                setTimeout(() => {
+                  if (!light.isDisposed()) {
+                    light.dispose();
+                  }
+                }, 0);
+              }
+            } catch (e) {
+              // Ignore errors
+            }
+          }
+        }
+      } catch (e) {
+        // Ignore any errors in light disposal
+      }
     }
   }
 }

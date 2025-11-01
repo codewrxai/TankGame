@@ -40,12 +40,49 @@ namespace PROJECT {
           }
           // Remove puddle after a short delay (1.5s)
           setTimeout(() => {
+            this.disposeLights();
             TOOLKIT.SceneManager.SafeDestroy(this.transform);
           }, 1500);
         }
       });
+    }
+
+    private disposeLights(): void {
+      if (!this.transform || this.transform.isDisposed()) return;
       
-      console.log("Puddle: Trigger observable setup complete");
+      try {
+        const allLights = this.scene.lights.slice();
+        
+        for (let light of allLights) {
+          try {
+            let lightNode = light as any;
+            if (lightNode.parent === this.transform) {
+              light.setEnabled(false);
+              setTimeout(() => {
+                if (!light.isDisposed()) {
+                  light.dispose();
+                }
+              }, 0);
+            }
+          } catch (e) {}
+        }
+        
+        const children = this.transform.getChildren();
+        for (let child of children) {
+          for (let light of this.scene.lights.slice()) {
+            try {
+              if (light === child || (light as any).parent === child) {
+                light.setEnabled(false);
+                setTimeout(() => {
+                  if (!light.isDisposed()) {
+                    light.dispose();
+                  }
+                }, 0);
+              }
+            } catch (e) {}
+          }
+        }
+      } catch (e) {}
     }
 
     private findTheClosestSpawnPoint(): BABYLON.Vector3 {

@@ -9,40 +9,88 @@ namespace PROJECT {
       super(transform, scene, properties, alias);
     }
 
-    protected awake(): void {
-      this.enableCollisionEvents(); // Enable collision events
+    protected start(): void {
+      this.enableCollisionEvents();
+      
       let player = TOOLKIT.SceneManager.FindGameObjectWithTag(this.scene, "Player") as BABYLON.TransformNode;
       this.playerShooting = TOOLKIT.SceneManager.GetComponent(player, "PROJECT.PlayerShooting") as PROJECT.PlayerShooting;
-      console.log("PlayerBullet awake: playerShooting =", this.playerShooting);
-      // Debug collider setup
-      if (!this.transform.physicsBody) {
-        console.warn("PlayerBullet: No physicsBody on bullet!");
-      } else {
-        console.log("PlayerBullet: physicsBody exists", this.transform.physicsBody);
+      
+      // Get child components for particle and audio
+      const children = this.transform.getChildren();
+      if (children.length > 0) {
+        const firstChild = children[0] as BABYLON.TransformNode;
+        
+        // Find particle system
+        for (let ps of this.scene.particleSystems) {
+          if (ps.emitter === firstChild && ps instanceof BABYLON.ParticleSystem) {
+            this.hitParticles = ps as BABYLON.ParticleSystem;
+            break;
+          }
+        }
+        
+        // Find audio source
+        this.hitAudio = TOOLKIT.SceneManager.FindScriptComponent(firstChild, "TOOLKIT.AudioSource") as TOOLKIT.AudioSource;
       }
-      // Subscribing to the collision event
+      
+      // Subscribe to collision events
       this.onCollisionEnterObservable.add((otherTransform) => {
         this.handleCollision(otherTransform);
       });
     }
 
     private handleCollision(other: BABYLON.TransformNode): void {
-      console.log("PlayerBullet collided with:", other.name);
       if (this.isDestroyed) return;
-      // SAFETY CHECK: Ignore any collision with an object tagged "Player"
-      if (TOOLKIT.SceneManager.GetTransformTag(other) === "Player") {
+      
+      // Note: Unity physics layers should prevent player bullet from hitting player
+      // But we add a safety check anyway
+      const otherTag = TOOLKIT.SceneManager.GetTransformTag(other);
+      if (otherTag === "Player") {
         return;
       }
+      
       this.isDestroyed = true;
-      // Check for Enemy tag
-      if (TOOLKIT.SceneManager.GetTransformTag(other) === "Enemy") {
+      
+      // Check for Enemy tag and apply damage
+      if (otherTag === "Enemy") {
         const enemyHealth = TOOLKIT.SceneManager.GetComponent(other, "PROJECT.EnemyHealth") as PROJECT.EnemyHealth;
         if (enemyHealth && this.playerShooting) {
           enemyHealth.takeDamage(this.playerShooting.damagePerShot, other.position);
         }
       }
-      // Destroy the bullet itself
+      
+      // Handle particle and audio effects
+      if (this.hitParticles) {
+        const particleEmitter = this.hitParticles.emitter as BABYLON.TransformNode;
+        
+        // Unparent the particles from the bullet
+        if (particleEmitter) {
+          particleEmitter.parent = null;
+        }
+        
+        // Play particle system
+        this.hitParticles.start();
+        
+        // Play audio
+        if (this.hitAudio) {
+          this.hitAudio.play();
+        }
+        
+        // Schedule particle cleanup after duration
+        if (particleEmitter) {
+          const duration = this.hitParticles.targetStopDuration || 2.0;
+          this.scheduleParticleCleanup(particleEmitter, duration);
+        }
+      }
+      
+      // Destroy the bullet
       TOOLKIT.SceneManager.SafeDestroy(this.transform);
+    }
+    
+    private async scheduleParticleCleanup(emitter: BABYLON.TransformNode, duration: number): Promise<void> {
+      await TOOLKIT.SceneManager.WaitForSeconds(duration);
+      if (emitter && !emitter.isDisposed()) {
+        TOOLKIT.SceneManager.SafeDestroy(emitter);
+      }
     }
   }
 }

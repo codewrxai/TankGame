@@ -3,6 +3,10 @@ namespace PROJECT {
     public playerHealth: PROJECT.PlayerHealth; // Reference to the player's health.
 
     private anim: TOOLKIT.AnimationState; // Reference to the animator component.
+    
+    // UI Elements
+    private advancedTexture: BABYLON.GUI.AdvancedDynamicTexture;
+    private gameOverText: BABYLON.GUI.TextBlock;
 
     constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties: any = {}, alias: string = "PROJECT.GameOverManager") {
       super(transform, scene, properties, alias);
@@ -11,6 +15,29 @@ namespace PROJECT {
     protected awake(): void {
       // Set up the reference.
       this.anim = TOOLKIT.SceneManager.GetComponent(this.transform, "TOOLKIT.AnimationState") as TOOLKIT.AnimationState;
+      
+      // Create UI
+      this.createGameOverUI();
+      
+      console.log("GameOverManager: UI created successfully!");
+    }
+
+    private createGameOverUI(): void {
+      // Create fullscreen UI
+      this.advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("GameOverUI", true, this.scene);
+
+      // Game Over Text - Centered
+      this.gameOverText = new BABYLON.GUI.TextBlock("GameOverText");
+      this.gameOverText.text = "GAME OVER";
+      this.gameOverText.color = "red";
+      this.gameOverText.fontSize = 96;
+      this.gameOverText.fontWeight = "bold";
+      this.gameOverText.textHorizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER;
+      this.gameOverText.textVerticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER;
+      this.gameOverText.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER;
+      this.gameOverText.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER;
+      this.gameOverText.alpha = 0; // Hidden by default
+      this.advancedTexture.addControl(this.gameOverText);
     }
 
     protected start(): void {
@@ -23,8 +50,6 @@ namespace PROJECT {
       }
       if (this.playerHealth) {
         this.checkGameOver();
-      } else {
-        TOOLKIT.SceneManager.ConsoleError("GameOverManager: PlayerHealth not found. Game over check will not start.");
       }
     }
 
@@ -34,12 +59,22 @@ namespace PROJECT {
         await TOOLKIT.SceneManager.WaitForSeconds(0.3);
       }
       if (!this.playerHealth) {
-        TOOLKIT.SceneManager.ConsoleError("GameOverManager: PlayerHealth is undefined at game over.");
         return;
       }
+      
+      // Show game over text
+      if (this.gameOverText) {
+        this.gameOverText.alpha = 1;
+      }
+      
       // Tell the animator the game is over...
-      this.anim.setTrigger("GameOver");
+      if (this.anim) {
+        this.anim.setTrigger("GameOver");
+      }
+      
       await TOOLKIT.SceneManager.WaitForSeconds(3);
+      
+      // Reload scene
       window.location.reload();
     }
   }

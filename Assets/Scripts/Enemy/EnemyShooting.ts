@@ -47,30 +47,48 @@ namespace PROJECT {
 
       // If the player has health to lose...
       if (this.playerHealth.currentHealth > 0) {
-        // Instantiate bullet
-        // You must have a reference to the AssetContainer that contains the bullet prefab
-        // For this example, we assume you have a property: bulletContainer: BABYLON.AssetContainer
-        // If not, you must load or get it before instantiating
-        if (!(this as any).bulletContainer) {
-          // Try to get the asset container by name (replace 'BulletContainer' with your actual container name)
-          (this as any).bulletContainer = TOOLKIT.SceneManager.GetAssetContainer(this.scene, "BulletContainer");
-        }
+        // Get bullet container
         let bulletContainer = SM.GetAssetContainer(this.scene, "enemybullet.glb");
-          const spawnPointPosition = this.bulletSpawnPoint.getAbsolutePosition();
-          console.log("Spawn Point Position:", spawnPointPosition);
-          const spawnOffset = new BABYLON.Vector3(0, 1.3, 0); // Raise by 1 unit (adjust as needed)
-        // Add force to bullet
-          let bulletClone: BABYLON.TransformNode = SM.InstantiatePrefabFromContainer(bulletContainer, "EnemyBullet","EnemyBullet_Clone",null,spawnPointPosition.add(spawnOffset),BABYLON.Quaternion.Identity());
-          const forwardNudge = TOOLKIT.Utilities.GetForwardVector(this.transform).scale(2);
-          bulletClone.position.addInPlace(forwardNudge);
-          if (!bulletClone) {
-            SM.ConsoleError("EnemyShooting: Failed to instantiate 'EnemyBullet' prefab.");
-            return;
-          }
-          
-          // Set initial position and rotation
+        
+        // Use the enemy's CURRENT forward direction (where it's actually facing)
+        let forward: BABYLON.Vector3 = new BABYLON.Vector3(0, 0, 1);
+        if (this.transform.rotationQuaternion) {
+          // Get forward direction from rotation quaternion
+          let rotationMatrix = new BABYLON.Matrix();
+          BABYLON.Matrix.FromQuaternionToRef(this.transform.rotationQuaternion, rotationMatrix);
+          forward = BABYLON.Vector3.TransformNormal(forward, rotationMatrix);
+        } else {
+          // Fallback: use rotation euler angles
+          forward = new BABYLON.Vector3(
+            Math.sin(this.transform.rotation.y),
+            0,
+            Math.cos(this.transform.rotation.y)
+          );
+        }
+        forward.normalize();
+        
+        const spawnPointPosition = this.bulletSpawnPoint.getAbsolutePosition();
+        const spawnOffset = new BABYLON.Vector3(0, 1.3, 0); // Raise spawn point
+        const forwardOffset = forward.scale(2); // 5 units forward to clear enemy collider
+        const finalSpawnPosition = spawnPointPosition.add(spawnOffset).add(forwardOffset);
+        
+        // Instantiate bullet outside enemy collider
+        let bulletClone: BABYLON.TransformNode = SM.InstantiatePrefabFromContainer(
+          bulletContainer, 
+          "EnemyBullet",
+          "EnemyBullet_Clone",
+          null,
+          finalSpawnPosition,
+          BABYLON.Quaternion.Identity()
+        );
+        
+        if (!bulletClone) {
+          SM.ConsoleError("EnemyShooting: Failed to instantiate 'EnemyBullet' prefab.");
+          return;
+        }
+        
+        // Apply force in the direction the enemy is facing
         if (bulletClone.physicsBody) {
-          let forward: BABYLON.Vector3 = this.transform.forward;
           bulletClone.physicsBody.applyImpulse(forward.scale(this.BulletForce), bulletClone.position);
         }
       }

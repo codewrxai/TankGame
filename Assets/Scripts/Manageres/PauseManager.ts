@@ -1,28 +1,113 @@
 namespace PROJECT {
   export class PauseManager extends TOOLKIT.ScriptComponent {
-    private canvas: BABYLON.TransformNode;
+    // UI Elements
+    private advancedTexture: BABYLON.GUI.AdvancedDynamicTexture;
+    private pausePanel: BABYLON.GUI.Rectangle;
+    private pauseText: BABYLON.GUI.TextBlock;
+    private resumeButton: BABYLON.GUI.Button;
+    private quitButton: BABYLON.GUI.Button;
 
     constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties: any = {}, alias: string = "PROJECT.PauseManager") {
       super(transform, scene, properties, alias);
     }
 
-    protected start(): void {
-  // Assign canvas as a child node named "Canvas" using Babylon Toolkit API (adjust name as needed)
-      this.canvas = this.getChildNode("Canvas") as BABYLON.TransformNode;
+    protected awake(): void {
+      // Create UI
+      this.createPauseMenuUI();
+      
+      console.log("PauseManager: UI created successfully!");
+    }
+
+    private createPauseMenuUI(): void {
+      // Create fullscreen UI
+      this.advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("PauseUI", true, this.scene);
+
+      // Pause Panel Container
+      this.pausePanel = new BABYLON.GUI.Rectangle("PausePanel");
+      this.pausePanel.width = "600px";
+      this.pausePanel.height = "500px";
+      this.pausePanel.cornerRadius = 20;
+      this.pausePanel.color = "white";
+      this.pausePanel.thickness = 4;
+      this.pausePanel.background = "rgba(0, 0, 0, 0.8)";
+      this.pausePanel.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER;
+      this.pausePanel.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER;
+      this.pausePanel.isVisible = false; // Hidden by default
+      this.advancedTexture.addControl(this.pausePanel);
+
+      // Create a stack panel for vertical layout
+      const stackPanel = new BABYLON.GUI.StackPanel("PauseStack");
+      stackPanel.width = "100%";
+      stackPanel.height = "100%";
+      stackPanel.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER;
+      this.pausePanel.addControl(stackPanel);
+
+      // Pause Text
+      this.pauseText = new BABYLON.GUI.TextBlock("PauseText");
+      this.pauseText.text = "PAUSED";
+      this.pauseText.color = "white";
+      this.pauseText.fontSize = 72;
+      this.pauseText.fontWeight = "bold";
+      this.pauseText.height = "120px";
+      this.pauseText.paddingBottom = "30px";
+      stackPanel.addControl(this.pauseText);
+
+      // Resume Button
+      this.resumeButton = BABYLON.GUI.Button.CreateSimpleButton("ResumeButton", "RESUME");
+      this.resumeButton.width = "300px";
+      this.resumeButton.height = "80px";
+      this.resumeButton.color = "white";
+      this.resumeButton.cornerRadius = 10;
+      this.resumeButton.background = "rgba(0, 150, 0, 0.8)";
+      this.resumeButton.thickness = 2;
+      this.resumeButton.fontSize = 36;
+      this.resumeButton.fontWeight = "bold";
+      this.resumeButton.paddingBottom = "20px";
+      this.resumeButton.onPointerUpObservable.add(() => {
+        this.pause();
+      });
+      this.resumeButton.onPointerEnterObservable.add(() => {
+        this.resumeButton.background = "rgba(0, 200, 0, 1)";
+      });
+      this.resumeButton.onPointerOutObservable.add(() => {
+        this.resumeButton.background = "rgba(0, 150, 0, 0.8)";
+      });
+      stackPanel.addControl(this.resumeButton);
+
+      // Quit Button
+      this.quitButton = BABYLON.GUI.Button.CreateSimpleButton("QuitButton", "QUIT");
+      this.quitButton.width = "300px";
+      this.quitButton.height = "80px";
+      this.quitButton.color = "white";
+      this.quitButton.cornerRadius = 10;
+      this.quitButton.background = "rgba(150, 0, 0, 0.8)";
+      this.quitButton.thickness = 2;
+      this.quitButton.fontSize = 36;
+      this.quitButton.fontWeight = "bold";
+      this.quitButton.onPointerUpObservable.add(() => {
+        this.quit();
+      });
+      this.quitButton.onPointerEnterObservable.add(() => {
+        this.quitButton.background = "rgba(200, 0, 0, 1)";
+      });
+      this.quitButton.onPointerOutObservable.add(() => {
+        this.quitButton.background = "rgba(150, 0, 0, 0.8)";
+      });
+      stackPanel.addControl(this.quitButton);
     }
 
     protected update(): void {
       if (TOOLKIT.InputController.GetKeyboardInput(TOOLKIT.UserInputKey.Escape)) {
-        if (this.canvas) {
-          this.canvas.setEnabled(!this.canvas.isEnabled());
-        }
         this.pause();
       }
     }
 
     public pause(): void {
-      // Toggle game pause by pausing or resuming the render loop
-      TOOLKIT.SceneManager.PauseRenderLoop = !TOOLKIT.SceneManager.PauseRenderLoop;
+      // Toggle pause menu
+      if (this.pausePanel) {
+        this.pausePanel.isVisible = !this.pausePanel.isVisible;
+        TOOLKIT.SceneManager.PauseRenderLoop = this.pausePanel.isVisible;
+      }
       this.lowpass();
     }
 
@@ -32,9 +117,8 @@ namespace PROJECT {
     }
 
     public quit(): void {
-      // Babylon.js does not support quitting the browser tab.
-      // You may want to redirect or show a message instead.
-      // window.close(); // Not reliable in browsers
+      // Reload the scene
+      window.location.reload();
     }
   }
 }
