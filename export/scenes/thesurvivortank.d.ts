@@ -38,6 +38,7 @@ declare namespace PROJECT {
 declare namespace PROJECT {
     class EnemyBullet extends TOOLKIT.ScriptComponent {
         private enemyShooting;
+        private explosionParticles;
         private isDestroyed;
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
         protected awake(): void;
@@ -52,6 +53,7 @@ declare namespace PROJECT {
         deathClip: BABYLON.Sound;
         private deathAudio;
         private deathParticles;
+        private enemyParticles;
         private boxCollider;
         private isDead;
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
@@ -73,6 +75,21 @@ declare namespace PROJECT {
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
         protected start(): void;
         protected update(): void;
+    }
+}
+declare namespace PROJECT {
+    class EnemyParticles extends TOOLKIT.ScriptComponent {
+        private movementParticles;
+        private deathParticles;
+        private enemyMovement;
+        private enemyHealth;
+        constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
+        protected start(): void;
+        private createMovementParticles;
+        private createDeathParticles;
+        protected update(): void;
+        playDeathParticles(): void;
+        dispose(): void;
     }
 }
 declare namespace PROJECT {
@@ -248,15 +265,54 @@ declare namespace PROJECT {
     }
 }
 declare namespace PROJECT {
+    class BulletExplosionParticles extends TOOLKIT.ScriptComponent {
+        private explosionParticles;
+        constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
+        protected start(): void;
+        private createExplosionParticles;
+        playExplosion(position: BABYLON.Vector3): void;
+        dispose(): void;
+    }
+}
+declare namespace PROJECT {
+    class EnemyParticle extends TOOLKIT.ScriptComponent {
+        private movementParticles;
+        private deathParticles;
+        private enemyMovement;
+        private enemyHealth;
+        constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
+        protected start(): void;
+        private createMovementParticles;
+        private createDeathParticles;
+        protected update(): void;
+        playDeathParticles(): void;
+        dispose(): void;
+    }
+}
+declare namespace PROJECT {
+    class PlayerParticle extends TOOLKIT.ScriptComponent {
+        private movementParticles;
+        private deathParticles;
+        private playerMovement;
+        private playerHealth;
+        constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
+        protected start(): void;
+        private createMovementParticles;
+        private createDeathParticles;
+        protected update(): void;
+        playDeathParticles(): void;
+        dispose(): void;
+    }
+}
+declare namespace PROJECT {
     class PlayerBullet extends TOOLKIT.ScriptComponent {
         private playerShooting;
-        private hitParticles;
+        private explosionParticles;
         private hitAudio;
         private isDestroyed;
         constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
         protected start(): void;
         private handleCollision;
-        private scheduleParticleCleanup;
     }
 }
 declare namespace PROJECT {
@@ -267,6 +323,7 @@ declare namespace PROJECT {
         flashSpeed: number;
         private playerMovement;
         private playerShooting;
+        private playerParticles;
         private isDamaged;
         private isDead;
         private isInvulnerable;
@@ -299,6 +356,21 @@ declare namespace PROJECT {
         invertedControlsCourtine(time: number): Promise<void>;
         reduceSpeed(time: number): void;
         reduceSpeedCourtine(time: number): Promise<void>;
+    }
+}
+declare namespace PROJECT {
+    class PlayerParticles extends TOOLKIT.ScriptComponent {
+        private movementParticles;
+        private deathParticles;
+        private playerMovement;
+        private playerHealth;
+        constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties?: any, alias?: string);
+        protected start(): void;
+        private createMovementParticles;
+        private createDeathParticles;
+        protected update(): void;
+        playDeathParticles(): void;
+        dispose(): void;
     }
 }
 declare namespace PROJECT {

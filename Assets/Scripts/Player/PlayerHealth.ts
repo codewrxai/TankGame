@@ -7,6 +7,7 @@ namespace PROJECT {
 
     private playerMovement: TOOLKIT.ScriptComponent; // Reference to the player's movement.
     private playerShooting: TOOLKIT.ScriptComponent; // Reference to the PlayerShooting script.
+    private playerParticles: PROJECT.PlayerParticle; // Reference to the player's particle system.
     //private playerAudio: TOOLKIT.AudioSource; // Reference to the AudioSource component.
 
     private isDamaged: boolean = false; // Indicate Wheather the player gets damaged.
@@ -26,6 +27,7 @@ namespace PROJECT {
     protected awake(): void {
       this.playerMovement = TOOLKIT.SceneManager.GetComponent(this.transform, "PROJECT.PlayerMovement") as TOOLKIT.ScriptComponent;
       this.playerShooting = TOOLKIT.SceneManager.GetComponent(this.transform, "PROJECT.PlayerShooting") as TOOLKIT.ScriptComponent;
+      this.playerParticles = TOOLKIT.SceneManager.GetComponent(this.transform, "PROJECT.PlayerParticles") as PROJECT.PlayerParticle;
       //this.playerAudio = TOOLKIT.SceneManager.GetComponent(this.transform, "TOOLKIT.AudioSource") as TOOLKIT.AudioSource;
 
       this.currentHealth = this.startingHealth;
@@ -188,6 +190,11 @@ namespace PROJECT {
     private death(): void {
       // Set the death flag so this function won't be called again.
       this.isDead = true;
+
+      // Play death particles
+      if (this.playerParticles) {
+        this.playerParticles.playDeathParticles();
+      }
 
       // Set the audiosource to play the death clip and play it (this will stop the hurt sound from playing).
       //if (this.playerAudio) {

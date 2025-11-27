@@ -14,10 +14,10 @@
     {
       "deployType": "Production",
       "regionName": "USEast1",
-      "bucketName": "",
-      "remotePath": "",
-      "cloudFront": "",
-      "hostAddress": "",
+      "bucketName": "tanks-demo-project",
+      "remotePath": "/",
+      "cloudFront": "E335J3ZUFYG1OZ",
+      "hostAddress": "http://dc1r5vh54v66w.cloudfront.net",
       "sourceFolder": ""
     }
   ]

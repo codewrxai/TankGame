@@ -3882,7 +3882,7 @@
                 }
               ],
               "multimaterial": {
-                "id": "2820d1d4-432f-4ea7-b7c3-15dd74afb890",
+                "id": "5c2925f9-ac6d-4a25-98c9-16755d43085e",
                 "key": "KEY_0_1_2",
                 "name": "MM_TankChassis",
                 "materials": [
@@ -3927,7 +3927,7 @@
                 }
               ],
               "multimaterial": {
-                "id": "73df102d-f69b-4a19-a712-626e2f6f1fec",
+                "id": "a4469b33-2260-43e1-8b19-4fe62f3c1dcb",
                 "key": "KEY_1_1",
                 "name": "MM_TankTracksLeft",
                 "materials": [
@@ -3971,7 +3971,7 @@
                 }
               ],
               "multimaterial": {
-                "id": "e3482ee6-aebc-4874-9481-ed559d96c8ed",
+                "id": "fd2c2ea7-85ce-44a1-b254-d1b0f48f6e3c",
                 "key": "KEY_1_1",
                 "name": "MM_TankTracksRight",
                 "materials": [
@@ -4015,7 +4015,7 @@
                 }
               ],
               "multimaterial": {
-                "id": "7f138830-c17c-438c-9f07-acd3dd11be35",
+                "id": "e1aa4a20-da99-4709-9bf7-cfbcbe538171",
                 "key": "KEY_0_1",
                 "name": "MM_TankTurret",
                 "materials": [
@@ -4091,7 +4091,7 @@
                 }
               ],
               "multimaterial": {
-                "id": "593d49a6-531e-44b6-a622-15e79c5cd5cf",
+                "id": "4365b060-206c-433a-8a85-361b1ab29cd8",
                 "key": "KEY_5_6",
                 "name": "MM_BakedGround",
                 "materials": [
@@ -4135,7 +4135,7 @@
                 }
               ],
               "multimaterial": {
-                "id": "fccf39ae-04e3-4dfd-b201-f480449e5303",
+                "id": "f08ea78c-1177-4c76-a317-69bea72d5cb1",
                 "key": "KEY_7_8",
                 "name": "MM_BakedDunes",
                 "materials": [
@@ -4211,7 +4211,7 @@
                 }
               ],
               "multimaterial": {
-                "id": "973b43b4-2206-414d-a4cb-c7c4d03bd0b2",
+                "id": "bd2f9f35-4a03-4ee8-afa0-7c1d5af4dbbf",
                 "key": "KEY_11_12",
                 "name": "MM_BakedTrees",
                 "materials": [
@@ -4283,7 +4283,7 @@
                 }
               ],
               "multimaterial": {
-                "id": "ca6305e1-7ffd-40f2-ad14-3c5d0233d90e",
+                "id": "8ab0ab00-3806-4a84-80a4-4abe70048f77",
                 "key": "KEY_13_14_15_16_17_18",
                 "name": "MM_BakedMilitary",
                 "materials": [
@@ -4345,7 +4345,7 @@
                 }
               ],
               "multimaterial": {
-                "id": "65e8239e-44b0-4b86-8298-1308262bf689",
+                "id": "f90a124f-7ed3-4143-8d19-92117934a0cd",
                 "key": "KEY_19_20_21_22",
                 "name": "MM_BakedOilField",
                 "materials": [
@@ -4398,7 +4398,7 @@
                 }
               ],
               "multimaterial": {
-                "id": "204c1fe6-0dc3-43d5-9b04-c728c94cc0c6",
+                "id": "7893f61f-479f-4c8b-9441-953e0cff7b2e",
                 "key": "KEY_23_24_25",
                 "name": "MM_BakedRuins",
                 "materials": [
@@ -4457,7 +4457,7 @@
                 }
               ],
               "multimaterial": {
-                "id": "a2cdc5ce-ec75-41cd-b458-4bb58093ca07",
+                "id": "38f4d8f8-6689-4b14-a6d3-a21b97c973c3",
                 "key": "KEY_26_27_28_29",
                 "name": "MM_Helipad",
                 "materials": [
@@ -4494,7 +4494,7 @@
       "name": "Player",
       "extras": {
         "metadata": {
-          "guid": "071eba22-beec-451e-af67-4fabd33155de",
+          "guid": "649e02c7-4b9b-4888-97f3-012eb9662c75",
           "layer": 10,
           "layermask": 1024,
           "layername": "Player",
@@ -4578,7 +4578,7 @@
                 "useGravity": true,
                 "isKinematic": false
               },
-              "instanceID": 46298,
+              "instanceID": 42680,
               "instance": null
             },
             {
@@ -4590,14 +4590,14 @@
                 "currentHealth": 0,
                 "healthSlider": {
                   "type": "UnityEngine.RectTransform",
-                  "id": "81efb80d-9a81-4595-8eec-92416cf99da6",
+                  "id": "1b0b308c-c39d-427a-8e84-5cde5ebb0bba",
                   "tag": "Untagged",
                   "name": "HealthSlider",
                   "layer": 5
                 },
                 "damageImage": {
                   "type": "UnityEngine.RectTransform",
-                  "id": "17430105-a233-406a-981a-77dfb19bdf4e",
+                  "id": "ccf67be9-9199-455b-96b9-0e17e0a8b69f",
                   "tag": "Untagged",
                   "name": "DamageImage",
                   "layer": 5
@@ -4611,7 +4611,7 @@
                   "a": 0.1
                 }
               },
-              "instanceID": 46298,
+              "instanceID": 42680,
               "instance": null
             },
             {
@@ -4622,7 +4622,7 @@
                 "speed": 10.0,
                 "rotateSpeed": 180.0
               },
-              "instanceID": 46298,
+              "instanceID": 42680,
               "instance": null
             },
             {
@@ -4634,14 +4634,22 @@
                 "timeBetweenBullets": 0.8,
                 "bullet": {
                   "type": "UnityEngine.Transform",
-                  "id": "caa6a2a8-73c2-4464-882b-5efb713cb2e3",
+                  "id": "3bd3ee33-23c7-4cff-9b65-cc5a1ecbda75",
                   "tag": "Untagged",
                   "name": "PlayerBullet",
                   "layer": 31
                 },
                 "bulletForce": 12.0
               },
-              "instanceID": 46298,
+              "instanceID": 42680,
+              "instance": null
+            },
+            {
+              "alias": "script",
+              "order": 0,
+              "klass": "PROJECT.PlayerParticle",
+              "properties": null,
+              "instanceID": 42680,
               "instance": null
             },
             {
@@ -4670,7 +4678,7 @@
                 "bypasslistenereffects": false,
                 "enablelegacyaudio": false
               },
-              "instanceID": 46298,
+              "instanceID": 42680,
               "instance": null
             }
           ]
@@ -4687,7 +4695,7 @@
       "name": "TankRenderers",
       "extras": {
         "metadata": {
-          "guid": "1223db09-73c2-4740-813c-170da81a5999",
+          "guid": "1ee12525-7a24-48c1-bdb0-4da5364f5de3",
           "layer": 10,
           "layermask": 1024,
           "layername": "Player",
@@ -4705,7 +4713,7 @@
       "name": "TankChassis",
       "extras": {
         "metadata": {
-          "guid": "8006e43a-d29c-42d1-bbfd-938bd60c549f",
+          "guid": "813acd9c-4a4d-4c9f-b333-ccf335331346",
           "layer": 10,
           "layermask": 1024,
           "layername": "Player",
@@ -4742,7 +4750,7 @@
       "name": "TankTracksLeft",
       "extras": {
         "metadata": {
-          "guid": "b0602222-46b1-40e5-8cee-6ac9bc2b5d99",
+          "guid": "941ca207-9191-4290-b169-8c7180f31fe2",
           "layer": 10,
           "layermask": 1024,
           "layername": "Player",
@@ -4779,7 +4787,7 @@
       "name": "TankTracksRight",
       "extras": {
         "metadata": {
-          "guid": "65f718fa-3319-460e-99dc-87f4b049d7b2",
+          "guid": "e928eae1-b744-46e0-961a-cfa7f173a7e6",
           "layer": 10,
           "layermask": 1024,
           "layername": "Player",
@@ -4824,7 +4832,7 @@
       "name": "TankTurret",
       "extras": {
         "metadata": {
-          "guid": "dfc6e1c1-fdd0-41b7-a4dd-35d405758c0a",
+          "guid": "789ac10d-861f-40f7-ba90-125c8841bda9",
           "layer": 10,
           "layermask": 1024,
           "layername": "Player",
@@ -4865,7 +4873,7 @@
       "name": "PlayerBulletSpawnPoint",
       "extras": {
         "metadata": {
-          "guid": "d6419e6a-b3a9-4056-ac75-bd5a1e3321f0",
+          "guid": "5331489b-c159-4bf2-a93b-dc05fc3e24c1",
           "layer": 10,
           "layermask": 1024,
           "layername": "Player",
@@ -4889,7 +4897,7 @@
       "name": "SmokeEffect",
       "extras": {
         "metadata": {
-          "guid": "970aa9d9-6d49-4ed2-86c7-316124b720e1",
+          "guid": "a96d3119-69d1-4084-b595-606b5ac17c7b",
           "layer": 10,
           "layermask": 1024,
           "layername": "Player",
@@ -4976,7 +4984,7 @@
                 "renderer": {
                   "materials": [
                     {
-                      "name": "smoke (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)",
+                      "name": "smoke (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)",
                       "shader": "Standard"
                     }
                   ],
@@ -5052,10 +5060,10 @@
                   }
                 },
                 "name": "SmokeEffect",
-                "instanceId": 46292,
+                "instanceId": 42674,
                 "enabled": true,
-                "materialName": "smoke (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)",
-                "materialId": -2244,
+                "materialName": "smoke (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)",
+                "materialId": -1988,
                 "transformPosition": {
                   "x": -0.623066962,
                   "y": 0.300000072,
@@ -5072,7 +5080,7 @@
                   "z": 1.0
                 }
               },
-              "instanceID": 46332,
+              "instanceID": 42716,
               "instance": null
             }
           ]
@@ -5099,7 +5107,7 @@
       "name": "Directional light",
       "extras": {
         "metadata": {
-          "guid": "05015434-3c94-4186-b96c-5fa5eac3e6c1",
+          "guid": "7c8f3c59-e5b4-48f2-a913-d4c90e30c1ae",
           "components": [
             {
               "alias": "light",
@@ -5195,7 +5203,7 @@
       "name": "BakedLevelArt",
       "extras": {
         "metadata": {
-          "guid": "4c8e3ca3-31bd-4f73-99f3-82033e298b44",
+          "guid": "d2ce7e82-86bd-425c-a363-6db027e44ba9",
           "navigation": {
             "area": 0,
             "links": null
@@ -5220,7 +5228,7 @@
       "name": "BakedColliders",
       "extras": {
         "metadata": {
-          "guid": "eef52e2d-5c3a-422c-b57f-1d02093f9ff4",
+          "guid": "d41c42b1-87c1-4ec5-9a15-e9be74895631",
           "navigation": {
             "area": 0,
             "links": null
@@ -5239,7 +5247,7 @@
       "name": "Boundaries",
       "extras": {
         "metadata": {
-          "guid": "b2361198-e835-4e99-9739-33e1f59c9759",
+          "guid": "b5c339ec-ac62-4bf9-94d3-ff13a91ea0ed",
           "navigation": {
             "area": 0,
             "links": null
@@ -5252,7 +5260,7 @@
       "name": "Cliff",
       "extras": {
         "metadata": {
-          "guid": "e367d005-fc92-4bda-9070-d3f74f212193",
+          "guid": "afe5f109-e3f2-43fc-9e32-86bd9df7df04",
           "navigation": {
             "area": 0,
             "links": null
@@ -5961,7 +5969,7 @@
       "name": "Cliff (1)",
       "extras": {
         "metadata": {
-          "guid": "05269967-7e84-44cd-8e5a-8fef99486eab",
+          "guid": "02e7ca45-3081-4674-aec3-294a8a2a1b63",
           "navigation": {
             "area": 0,
             "links": null
@@ -6590,7 +6598,7 @@
       "name": "Cliff (2)",
       "extras": {
         "metadata": {
-          "guid": "75aba411-850f-4b37-ad3d-cad159e38d98",
+          "guid": "64cf358d-f4d5-4f1c-88a0-4f79dffa91ca",
           "navigation": {
             "area": 0,
             "links": null
@@ -7299,7 +7307,7 @@
       "name": "Cliff (3)",
       "extras": {
         "metadata": {
-          "guid": "7749f439-0d5f-42ea-910b-9188fe9ca3d9",
+          "guid": "2e6126f9-ed37-4b04-a025-e7fda1811eae",
           "navigation": {
             "area": 0,
             "links": null
@@ -7925,7 +7933,7 @@
       "name": "Ground",
       "extras": {
         "metadata": {
-          "guid": "be6fcb80-9d73-47b9-b958-9ef2056d3b9c",
+          "guid": "ba0b8690-daa4-4e07-a9cb-14815a4fed18",
           "navigation": {
             "area": 0,
             "links": null
@@ -7946,7 +7954,7 @@
       "name": "GroundPlane",
       "extras": {
         "metadata": {
-          "guid": "c6a0c14c-db14-4026-83e3-4e909ca2f9eb",
+          "guid": "3d48039e-b11a-42f6-8da5-93e2802751b6",
           "navigation": {
             "area": 0,
             "links": null
@@ -7988,7 +7996,7 @@
             },
             "trigger": false,
             "persist": false,
-            "meshkey": "MESH_ID42758_X1_Y1_Z1_CONVEX_FALSE",
+            "meshkey": "MESH_ID42764_X1_Y1_Z1_CONVEX_FALSE",
             "boxsize": {
               "x": 0.0,
               "y": 0.0,
@@ -8026,7 +8034,7 @@
       "name": "GroundPlane.Collider",
       "extras": {
         "metadata": {
-          "guid": "c6a0c14c-db14-4026-83e3-4e909ca2f9eb",
+          "guid": "3d48039e-b11a-42f6-8da5-93e2802751b6",
           "visible": false,
           "visibility": 0.5,
           "tags": "CollisionMesh Layer0",
@@ -8094,7 +8102,7 @@
       "name": "Dunes",
       "extras": {
         "metadata": {
-          "guid": "dc501cda-5b44-49da-91a8-5b925727325a",
+          "guid": "228b003c-1897-4484-ae13-9fcfc550ec05",
           "navigation": {
             "area": 0,
             "links": null
@@ -8123,7 +8131,7 @@
       "name": "Cow",
       "extras": {
         "metadata": {
-          "guid": "ed062233-dbca-4f09-8b69-84d2e6aa16ee",
+          "guid": "29ff1689-b1d2-43b9-80fb-590685270063",
           "navigation": {
             "area": 0,
             "links": null
@@ -8282,7 +8290,7 @@
       "name": "Cow (1)",
       "extras": {
         "metadata": {
-          "guid": "47eabc5d-dce2-4fe6-ae2a-2344312fe453",
+          "guid": "e8c04414-cf3f-4b3e-a74a-24a358242706",
           "navigation": {
             "area": 0,
             "links": null
@@ -8387,7 +8395,7 @@
       "name": "Rocks",
       "extras": {
         "metadata": {
-          "guid": "ea9b6cb6-fce5-4ca4-855c-a08f7637ebc9",
+          "guid": "cbad3521-c43c-4e2e-b3b7-a597b7e69edb",
           "navigation": {
             "area": 0,
             "links": null
@@ -8416,7 +8424,7 @@
       "name": "Rocks01",
       "extras": {
         "metadata": {
-          "guid": "1e9eccdc-954e-47cb-9ebc-51d0690c854c",
+          "guid": "c8ce14eb-85c0-40d6-b578-a13b4e372b12",
           "navigation": {
             "area": 0,
             "links": null
@@ -8575,7 +8583,7 @@
       "name": "Rocks01 (1)",
       "extras": {
         "metadata": {
-          "guid": "5be3104d-f5cf-495d-8a9e-d670a23d1e25",
+          "guid": "c5f98684-bebf-4c23-ae78-2e3fb491ce22",
           "navigation": {
             "area": 0,
             "links": null
@@ -8734,7 +8742,7 @@
       "name": "Rocks01 (2)",
       "extras": {
         "metadata": {
-          "guid": "b46a0d97-7f1d-4289-b730-bc2bf948065c",
+          "guid": "da843ab7-78ca-4103-84f5-af7e3a1927cf",
           "navigation": {
             "area": 0,
             "links": null
@@ -8893,7 +8901,7 @@
       "name": "Rocks01 (3)",
       "extras": {
         "metadata": {
-          "guid": "266a492b-aa69-44db-80f6-73ad864e6473",
+          "guid": "afa552ae-fa2a-432f-b57d-4b5246ef9798",
           "navigation": {
             "area": 0,
             "links": null
@@ -9052,7 +9060,7 @@
       "name": "Rocks01 (4)",
       "extras": {
         "metadata": {
-          "guid": "73fedf78-6bb9-4817-8caa-e25097361ab4",
+          "guid": "e9720f3d-15df-48e0-8c2d-0649439dee0e",
           "navigation": {
             "area": 0,
             "links": null
@@ -9211,7 +9219,7 @@
       "name": "Rocks03 (5)",
       "extras": {
         "metadata": {
-          "guid": "61e76356-e97e-4299-85de-ccabd486daac",
+          "guid": "28644278-2109-4d4b-8395-6db6764bfb07",
           "navigation": {
             "area": 0,
             "links": null
@@ -9359,7 +9367,7 @@
       "name": "Rocks02",
       "extras": {
         "metadata": {
-          "guid": "a75153df-db2a-437b-9768-c1c0f23953c9",
+          "guid": "c58987f9-7716-4ac1-bfb6-911c97afec01",
           "navigation": {
             "area": 0,
             "links": null
@@ -9513,7 +9521,7 @@
       "name": "Rocks02 (1)",
       "extras": {
         "metadata": {
-          "guid": "7ac15f5f-9fbd-4d84-9849-404df0de9010",
+          "guid": "40d9a62b-e2a7-4dc9-a13c-0376fc8119f9",
           "navigation": {
             "area": 0,
             "links": null
@@ -9672,7 +9680,7 @@
       "name": "Rocks02 (2)",
       "extras": {
         "metadata": {
-          "guid": "aaaf66c6-ab2e-464d-a277-c2fdc57340fd",
+          "guid": "e5ddd783-0990-4367-8efb-f0a55b136529",
           "navigation": {
             "area": 0,
             "links": null
@@ -9826,7 +9834,7 @@
       "name": "Rocks02 (3)",
       "extras": {
         "metadata": {
-          "guid": "86407af5-2ebd-46ab-bf2c-e2b79b83af50",
+          "guid": "27002076-0c56-4369-beb1-ab0123cc9e1d",
           "navigation": {
             "area": 0,
             "links": null
@@ -9985,7 +9993,7 @@
       "name": "Rocks02 (4)",
       "extras": {
         "metadata": {
-          "guid": "2eae2598-5547-41aa-98b3-956d35fada6a",
+          "guid": "e8d353d4-a1cb-4d7b-8eb4-30b25df25985",
           "navigation": {
             "area": 0,
             "links": null
@@ -10144,7 +10152,7 @@
       "name": "Rocks02 (5)",
       "extras": {
         "metadata": {
-          "guid": "05ca58e4-ff48-4d98-baaf-ee475acb9531",
+          "guid": "24a8d2be-c9ff-4093-aff0-aa58a671773c",
           "navigation": {
             "area": 0,
             "links": null
@@ -10298,7 +10306,7 @@
       "name": "Rocks03",
       "extras": {
         "metadata": {
-          "guid": "fd79f4c4-c038-4828-ab81-222963d565e7",
+          "guid": "47433e1d-df0b-4c52-86d1-8318e661d137",
           "navigation": {
             "area": 0,
             "links": null
@@ -10452,7 +10460,7 @@
       "name": "Rocks03 (2)",
       "extras": {
         "metadata": {
-          "guid": "ac3ee2c3-ac98-4211-8117-4e7df034762a",
+          "guid": "93703962-962d-4d0d-a9ac-1ffd9418d82d",
           "navigation": {
             "area": 0,
             "links": null
@@ -10611,7 +10619,7 @@
       "name": "Rocks03 (3)",
       "extras": {
         "metadata": {
-          "guid": "ecc8954b-9b28-4043-83f6-d39db26e8473",
+          "guid": "29f6455b-ed84-467a-8cfb-2ccadcde0dc7",
           "navigation": {
             "area": 0,
             "links": null
@@ -10765,7 +10773,7 @@
       "name": "Rocks03 (4)",
       "extras": {
         "metadata": {
-          "guid": "e4e7bbb3-5ef8-4ff9-8dd8-1c4fdbfe55b2",
+          "guid": "311d341e-77b9-46aa-aae0-9110a9355047",
           "navigation": {
             "area": 0,
             "links": null
@@ -10924,7 +10932,7 @@
       "name": "Rocks03 (6)",
       "extras": {
         "metadata": {
-          "guid": "947cb2d0-a9c9-4b19-82b6-e7f360d9b8b1",
+          "guid": "81dcae1e-1985-45bf-be90-610dcc8df365",
           "navigation": {
             "area": 0,
             "links": null
@@ -10953,7 +10961,7 @@
       "name": "Rocks03 (7)",
       "extras": {
         "metadata": {
-          "guid": "88ef6af7-cb28-4b67-ac2f-f615ba901ef0",
+          "guid": "3b2cf599-b09d-49bb-a0c7-dbb80ef325ce",
           "navigation": {
             "area": 0,
             "links": null
@@ -10977,7 +10985,7 @@
       "name": "Column01",
       "extras": {
         "metadata": {
-          "guid": "828c57cf-210b-4201-832c-0eb743f3b05f",
+          "guid": "ac506b31-d4f2-4fc1-95d2-58b3db6fdd76",
           "navigation": {
             "area": 0,
             "links": null
@@ -11067,7 +11075,7 @@
       "name": "Column01 (1)",
       "extras": {
         "metadata": {
-          "guid": "3ab5905e-23f8-4316-95b1-837b6d56045c",
+          "guid": "dd51d977-01ba-4997-963d-3a9c351b67cb",
           "navigation": {
             "area": 0,
             "links": null
@@ -11162,7 +11170,7 @@
       "name": "Column01 (2)",
       "extras": {
         "metadata": {
-          "guid": "58bdf9ab-84eb-40e3-82bf-f5524d3663c5",
+          "guid": "c47b87f0-3a4d-4b7b-8aa8-79f584ae9836",
           "navigation": {
             "area": 0,
             "links": null
@@ -11257,7 +11265,7 @@
       "name": "Column02",
       "extras": {
         "metadata": {
-          "guid": "59164b00-7c49-4850-9cad-dcbe92b8e05d",
+          "guid": "d49bb0ff-2f0f-4ccc-830c-06663dd83378",
           "navigation": {
             "area": 0,
             "links": null
@@ -11416,7 +11424,7 @@
       "name": "Column02 (2)",
       "extras": {
         "metadata": {
-          "guid": "296bca34-dbca-49fa-ad5f-4b7a548e0f46",
+          "guid": "5a9cf8b7-6e0d-4977-b09d-d16ef515de0d",
           "navigation": {
             "area": 0,
             "links": null
@@ -11655,7 +11663,7 @@
       "name": "Column02 (3)",
       "extras": {
         "metadata": {
-          "guid": "4f617ed0-ade6-4c2c-8b7f-8bf9a232a6ce",
+          "guid": "c51f3a11-05d4-4bff-8047-a5a275d171e1",
           "navigation": {
             "area": 0,
             "links": null
@@ -11884,7 +11892,7 @@
       "name": "Cacti",
       "extras": {
         "metadata": {
-          "guid": "012be541-fb20-45cc-94d3-5b7996529b67",
+          "guid": "39301e25-46b9-4655-85a4-9926e069a0e6",
           "navigation": {
             "area": 0,
             "links": null
@@ -11913,7 +11921,7 @@
       "name": "Cactus",
       "extras": {
         "metadata": {
-          "guid": "93420732-d975-4ca7-a2d6-c8beb336420c",
+          "guid": "064410d7-4466-4a13-91d1-0062fd61158a",
           "navigation": {
             "area": 0,
             "links": null
@@ -12008,7 +12016,7 @@
       "name": "Cactus (1)",
       "extras": {
         "metadata": {
-          "guid": "4344deb7-4cd2-46f9-a63d-aa0c891e0d22",
+          "guid": "c1a2663c-506d-4e81-a6af-071fd2825492",
           "navigation": {
             "area": 0,
             "links": null
@@ -12103,7 +12111,7 @@
       "name": "Cactus (2)",
       "extras": {
         "metadata": {
-          "guid": "91445df9-e878-41fb-9f76-15f72aa7aa2b",
+          "guid": "3c549572-9cf0-46b6-b86f-3e8e024abe98",
           "navigation": {
             "area": 0,
             "links": null
@@ -12198,7 +12206,7 @@
       "name": "Cactus (3)",
       "extras": {
         "metadata": {
-          "guid": "9c1bf7eb-b924-45bd-ab50-3bc4aa2b97e5",
+          "guid": "f20ec2d6-5cd0-472b-8e7a-1c99ff894ff7",
           "navigation": {
             "area": 0,
             "links": null
@@ -12290,7 +12298,7 @@
       "name": "Trees",
       "extras": {
         "metadata": {
-          "guid": "36e00186-c787-4cc1-9dfc-951f428f96fd",
+          "guid": "e0d568a4-3c38-4ff5-90c1-36b083c3d16c",
           "navigation": {
             "area": 0,
             "links": null
@@ -12308,7 +12316,7 @@
       "name": "Tree",
       "extras": {
         "metadata": {
-          "guid": "697eb87f-63db-4fa7-ad4d-09249818e8c5",
+          "guid": "9e186e7e-26b2-4ab0-9ef1-245f45f1e832",
           "navigation": {
             "area": 0,
             "links": null
@@ -12403,7 +12411,7 @@
       "name": "Tree (1)",
       "extras": {
         "metadata": {
-          "guid": "12cd4041-7d73-4da2-b2ff-8a37a23c6bb0",
+          "guid": "00ba31f3-3d35-4938-bf23-550259eed453",
           "navigation": {
             "area": 0,
             "links": null
@@ -12487,7 +12495,7 @@
       "name": "Tree (2)",
       "extras": {
         "metadata": {
-          "guid": "f7c0e277-aa62-490f-9e48-b6f93d054805",
+          "guid": "e13670f4-62a5-4915-ac24-796622097a3f",
           "navigation": {
             "area": 0,
             "links": null
@@ -12582,7 +12590,7 @@
       "name": "Tree (3)",
       "extras": {
         "metadata": {
-          "guid": "a1050732-da95-479f-a06e-be38065c57f6",
+          "guid": "3e42bb07-74ca-471b-95f5-7ded26274be9",
           "navigation": {
             "area": 0,
             "links": null
@@ -12677,7 +12685,7 @@
       "name": "Tree (4)",
       "extras": {
         "metadata": {
-          "guid": "f6c7e248-0e7d-466d-8e08-c1a736cdb2b2",
+          "guid": "88f957d7-10ce-4ca1-bc0d-dc1106f9e490",
           "navigation": {
             "area": 0,
             "links": null
@@ -12772,7 +12780,7 @@
       "name": "Tree (5)",
       "extras": {
         "metadata": {
-          "guid": "00cd9871-0d0b-496f-979a-a726b353430f",
+          "guid": "f9c80e47-55f6-4f1d-b82e-8d40a2855f48",
           "navigation": {
             "area": 0,
             "links": null
@@ -12862,7 +12870,7 @@
       "name": "Tree (6)",
       "extras": {
         "metadata": {
-          "guid": "bf23ae34-db5b-459c-83dd-4277dfc7e2ad",
+          "guid": "8e14da84-4cfb-48c5-b8cc-e282ec852d38",
           "navigation": {
             "area": 0,
             "links": null
@@ -12957,7 +12965,7 @@
       "name": "Tree (7)",
       "extras": {
         "metadata": {
-          "guid": "997319bb-4e10-4c29-8b98-670b2006dc3b",
+          "guid": "561aa44d-1eee-48c3-ba53-89f846ffcb0f",
           "navigation": {
             "area": 0,
             "links": null
@@ -13052,7 +13060,7 @@
       "name": "Tree (8)",
       "extras": {
         "metadata": {
-          "guid": "34cda3a8-cd46-4b00-b3f9-4eceed935b3e",
+          "guid": "235bc1e3-5a0c-44d8-83c1-69a085caeb9c",
           "navigation": {
             "area": 0,
             "links": null
@@ -13147,7 +13155,7 @@
       "name": "Tree (9)",
       "extras": {
         "metadata": {
-          "guid": "01bd652b-0a2d-4cc5-b9bd-c073770388de",
+          "guid": "b458c74b-e837-4d9e-b31c-bbce3348f539",
           "navigation": {
             "area": 0,
             "links": null
@@ -13237,7 +13245,7 @@
       "name": "PalmTree (9)",
       "extras": {
         "metadata": {
-          "guid": "91285c99-0842-4603-8676-cbb84eeaaaa0",
+          "guid": "acf2e61c-4d86-4914-ab85-0c051438b224",
           "navigation": {
             "area": 0,
             "links": null
@@ -13326,7 +13334,7 @@
       "name": "Military",
       "extras": {
         "metadata": {
-          "guid": "b420c212-d062-42b1-91f4-de67e6fe085c",
+          "guid": "2a14bef9-c663-446e-b526-f64583511104",
           "navigation": {
             "area": 0,
             "links": null
@@ -13350,7 +13358,7 @@
       "name": "Building01",
       "extras": {
         "metadata": {
-          "guid": "31f4e64a-e41c-416b-8ea7-bda01af279b4",
+          "guid": "7bc3288f-e435-4d35-b4d9-96606404fda7",
           "navigation": {
             "area": 0,
             "links": null
@@ -13544,7 +13552,7 @@
       "name": "Building01 (1)",
       "extras": {
         "metadata": {
-          "guid": "d9d589b2-9df4-46b1-b5c6-a5513aba67b5",
+          "guid": "fe96ccb3-c50a-43ee-9f21-ea1fb40604cb",
           "navigation": {
             "area": 0,
             "links": null
@@ -13738,7 +13746,7 @@
       "name": "Building01 (2)",
       "extras": {
         "metadata": {
-          "guid": "e7e7b9d7-dd02-4c1e-aef8-5157f7ad0706",
+          "guid": "42b0abd6-94c5-455a-a4c9-e8ed6065e930",
           "navigation": {
             "area": 0,
             "links": null
@@ -13932,7 +13940,7 @@
       "name": "Building01 (3)",
       "extras": {
         "metadata": {
-          "guid": "f51fb513-9dba-49ec-9f24-c6dace9b574e",
+          "guid": "4c107d7d-a3fc-4261-a1c4-149fb4b4c726",
           "navigation": {
             "area": 0,
             "links": null
@@ -14126,7 +14134,7 @@
       "name": "Building02",
       "extras": {
         "metadata": {
-          "guid": "866e4d72-683b-4d4b-a762-37445e3cdb35",
+          "guid": "77031828-5de1-4fbe-8915-9d4739407d8a",
           "navigation": {
             "area": 0,
             "links": null
@@ -14280,7 +14288,7 @@
       "name": "Building02 (1)",
       "extras": {
         "metadata": {
-          "guid": "a235fca2-7720-44ce-9c59-fc23343e3cfd",
+          "guid": "603e923f-500c-448c-84b8-81a253ddac6e",
           "navigation": {
             "area": 0,
             "links": null
@@ -14434,7 +14442,7 @@
       "name": "Building02 (2)",
       "extras": {
         "metadata": {
-          "guid": "c3b82c01-78df-4451-8289-bce91033b031",
+          "guid": "193bcccd-0923-4230-9b7d-db4e754cd420",
           "navigation": {
             "area": 0,
             "links": null
@@ -14582,7 +14590,7 @@
       "name": "Radar",
       "extras": {
         "metadata": {
-          "guid": "55d6b2aa-7093-4564-8eca-84a014c7e171",
+          "guid": "3da5ddde-5bab-4102-b814-aa2d805d2358",
           "navigation": {
             "area": 0,
             "links": null
@@ -14669,7 +14677,7 @@
       "name": "OilField",
       "extras": {
         "metadata": {
-          "guid": "66a5e134-a90c-4d71-b6bb-7d47aa54f722",
+          "guid": "b45b7686-d33b-487a-8fff-99127e4278d0",
           "navigation": {
             "area": 0,
             "links": null
@@ -14698,7 +14706,7 @@
       "name": "OilStorage",
       "extras": {
         "metadata": {
-          "guid": "6576517b-d2e3-49e3-a1e1-4a919565adcb",
+          "guid": "ee5ea795-be73-4485-b64c-2872c30f7e8c",
           "navigation": {
             "area": 0,
             "links": null
@@ -14793,7 +14801,7 @@
       "name": "OilStorage (1)",
       "extras": {
         "metadata": {
-          "guid": "2a15b182-6a77-4b4a-bffd-534259091f27",
+          "guid": "e007aef2-782b-4e45-a7a9-e9917eae82d8",
           "navigation": {
             "area": 0,
             "links": null
@@ -14883,7 +14891,7 @@
       "name": "PumpJack",
       "extras": {
         "metadata": {
-          "guid": "126b6682-b8b4-4c27-b094-acf52ad5b5ed",
+          "guid": "538df428-8bce-4cd2-9c9d-9260da04972a",
           "navigation": {
             "area": 0,
             "links": null
@@ -15037,7 +15045,7 @@
       "name": "PumpJack (1)",
       "extras": {
         "metadata": {
-          "guid": "68c423f1-1eae-4b9c-b466-7b7a63e3f2e1",
+          "guid": "6cda0ba0-3017-4c4e-9c65-e013c6bb88be",
           "navigation": {
             "area": 0,
             "links": null
@@ -15191,7 +15199,7 @@
       "name": "PumpJack (2)",
       "extras": {
         "metadata": {
-          "guid": "3fee7a67-8198-4385-add7-94237698c63b",
+          "guid": "786d596c-b5b7-4223-8d7b-ebcef9c80e26",
           "navigation": {
             "area": 0,
             "links": null
@@ -15345,7 +15353,7 @@
       "name": "Refinery",
       "extras": {
         "metadata": {
-          "guid": "15228a10-0d7a-425f-8fce-b9315d43e52a",
+          "guid": "71236f49-2127-4e02-85cf-1cd847977586",
           "navigation": {
             "area": 0,
             "links": null
@@ -15613,7 +15621,7 @@
       "name": "Ruins",
       "extras": {
         "metadata": {
-          "guid": "e1a5f8e8-8fe2-4728-922a-f2133bfa60b3",
+          "guid": "853d5667-6ac6-492f-89e5-b2bc595b35c8",
           "navigation": {
             "area": 0,
             "links": null
@@ -15637,7 +15645,7 @@
       "name": "BustedTank",
       "extras": {
         "metadata": {
-          "guid": "a745d488-743e-465c-8417-e747e073ecc8",
+          "guid": "4dc5108f-72df-44af-b360-004443fb9704",
           "navigation": {
             "area": 0,
             "links": null
@@ -15791,7 +15799,7 @@
       "name": "Ruins01",
       "extras": {
         "metadata": {
-          "guid": "0e8290ad-0303-442b-8e34-19dc3e18d58f",
+          "guid": "c6a75daa-3762-4410-916d-92fc97621d79",
           "navigation": {
             "area": 0,
             "links": null
@@ -16070,7 +16078,7 @@
       "name": "Ruins01 (1)",
       "extras": {
         "metadata": {
-          "guid": "9f4deb09-c7e1-4b9c-8b81-5bac19721eb4",
+          "guid": "55451fc9-f66d-4042-8570-89f30ff9757e",
           "navigation": {
             "area": 0,
             "links": null
@@ -16344,7 +16352,7 @@
       "name": "Helipad",
       "extras": {
         "metadata": {
-          "guid": "5fbe8ad7-c1a8-4ab2-aa0d-159449f59598",
+          "guid": "e8a86675-6f7b-41f3-bcbf-4143f3dd4426",
           "navigation": {
             "area": 0,
             "links": null
@@ -16488,7 +16496,7 @@
       "name": "BakedBoundaries",
       "extras": {
         "metadata": {
-          "guid": "9a49d7ab-6cbc-48a4-9f12-ec69c06d3174",
+          "guid": "0bd49c85-462f-4d47-b5cb-8385809679d5",
           "navigation": {
             "area": 0,
             "links": null
@@ -16527,7 +16535,7 @@
       "name": "BakedGround",
       "extras": {
         "metadata": {
-          "guid": "bb5e168a-9a37-4922-b521-dea758536ee2",
+          "guid": "1735800b-a54d-453c-8773-2aa29c67d9a2",
           "navigation": {
             "area": 0,
             "links": null
@@ -16566,7 +16574,7 @@
       "name": "BakedDunes",
       "extras": {
         "metadata": {
-          "guid": "42e29deb-1d03-450d-b442-667b7249b894",
+          "guid": "21c14728-9e77-4ecf-9baa-3e08a0f29ba1",
           "navigation": {
             "area": 0,
             "links": null
@@ -16605,7 +16613,7 @@
       "name": "BakedRocks",
       "extras": {
         "metadata": {
-          "guid": "181abaa8-df10-4ac3-a8d4-2f8bc0f13ae9",
+          "guid": "e3be333d-2960-4477-aabb-f115e5536b50",
           "navigation": {
             "area": 0,
             "links": null
@@ -16644,7 +16652,7 @@
       "name": "BakedCacti",
       "extras": {
         "metadata": {
-          "guid": "a538d592-d028-4e47-ba5a-04cf350e5501",
+          "guid": "93e18293-a266-484c-b67e-ac88c5daed75",
           "navigation": {
             "area": 0,
             "links": null
@@ -16683,7 +16691,7 @@
       "name": "BakedTrees",
       "extras": {
         "metadata": {
-          "guid": "42d92471-6f72-4f37-94f6-7949b3834cd9",
+          "guid": "c17fa17f-a7fc-4549-865e-b197218dabc9",
           "navigation": {
             "area": 0,
             "links": null
@@ -16722,7 +16730,7 @@
       "name": "BakedMilitary",
       "extras": {
         "metadata": {
-          "guid": "f773033a-7594-4ad7-ae99-b64df1191924",
+          "guid": "9c7e3391-ff02-41a0-8965-77b468c8f199",
           "navigation": {
             "area": 0,
             "links": null
@@ -16761,7 +16769,7 @@
       "name": "BakedOilField",
       "extras": {
         "metadata": {
-          "guid": "27d4dbd7-3ef2-4fea-b187-9c579dafdc5e",
+          "guid": "519a5258-0718-4403-a71f-f27d654f9696",
           "navigation": {
             "area": 0,
             "links": null
@@ -16800,7 +16808,7 @@
       "name": "BakedRuins",
       "extras": {
         "metadata": {
-          "guid": "672e5b8e-fa53-47e8-9eb7-f6ae1cebc2d9",
+          "guid": "2f0f1f5e-e439-450f-a4b2-c85e2ce49a06",
           "navigation": {
             "area": 0,
             "links": null
@@ -16850,7 +16858,7 @@
       "name": "Helipad",
       "extras": {
         "metadata": {
-          "guid": "3815da32-0568-4e57-9367-954336da23d7",
+          "guid": "0a442a96-112d-4e9c-894b-d76b21d64572",
           "navigation": {
             "area": 0,
             "links": null
@@ -17032,7 +17040,7 @@
       "name": "CameraRig",
       "extras": {
         "metadata": {
-          "guid": "f93ef145-f4f3-428a-b255-17eaffc7b3ff"
+          "guid": "c680748c-3f61-4288-9e15-84fc0598b70d"
         }
       }
     },
@@ -17051,7 +17059,7 @@
       "name": "Main Camera",
       "extras": {
         "metadata": {
-          "guid": "160b25c1-781b-43ce-959d-a4e182d85431",
+          "guid": "4f4e0ddc-d67f-4cc9-854f-475b472fff63",
           "group": "MainCamera",
           "tags": "MainCamera Layer0",
           "components": [
@@ -17076,17 +17084,123 @@
       "name": "EventManager",
       "extras": {
         "metadata": {
-          "guid": "ef128a4e-3d6d-4d9a-b6ef-f012503d9def"
+          "guid": "253fb96a-c101-4cff-87be-64d17d1502b8",
+          "components": [
+            {
+              "alias": "script",
+              "order": 0,
+              "klass": "PROJECT.EventManager",
+              "properties": {
+                "gameEvents": [
+                  {
+                    "EventName": "Enemy",
+                    "EventObject": {
+                      "type": "UnityEngine.Transform",
+                      "id": "700457bf-b36f-49bd-a19f-84c9bb42de89",
+                      "tag": "Enemy",
+                      "name": "Enemy",
+                      "layer": 11
+                    },
+                    "SpawnPercentage": 5
+                  },
+                  {
+                    "EventName": "EnemyBoss",
+                    "EventObject": {
+                      "type": "UnityEngine.Transform",
+                      "id": "e16c9ad1-5100-49d7-be82-b8cf09604942",
+                      "tag": "Enemy",
+                      "name": "EnemyBoss",
+                      "layer": 11
+                    },
+                    "SpawnPercentage": 2
+                  },
+                  {
+                    "EventName": "Stone",
+                    "EventObject": {
+                      "type": "UnityEngine.Transform",
+                      "id": "11773504-a688-48e6-a926-7270331476c0",
+                      "tag": "Untagged",
+                      "name": "Stone",
+                      "layer": 0
+                    },
+                    "SpawnPercentage": 3
+                  },
+                  {
+                    "EventName": "Puddle",
+                    "EventObject": {
+                      "type": "UnityEngine.Transform",
+                      "id": "2233b759-cf00-4f22-883e-2b4f865992ad",
+                      "tag": "Untagged",
+                      "name": "Puddle",
+                      "layer": 0
+                    },
+                    "SpawnPercentage": 3
+                  },
+                  {
+                    "EventName": "TNT",
+                    "EventObject": {
+                      "type": "UnityEngine.Transform",
+                      "id": "c62b14f9-8c89-4e8b-b9f8-63956a311a0d",
+                      "tag": "Untagged",
+                      "name": "TNT",
+                      "layer": 0
+                    },
+                    "SpawnPercentage": 1
+                  }
+                ],
+                "bonusEvents": [
+                  {
+                    "EventName": "Heart",
+                    "EventObject": {
+                      "type": "UnityEngine.Transform",
+                      "id": "5dc3eea3-e957-46b1-9c15-ac378dbefd9b",
+                      "tag": "Untagged",
+                      "name": "Heart",
+                      "layer": 0
+                    },
+                    "SpawnPercentage": 2
+                  },
+                  {
+                    "EventName": "StrongerWeapon",
+                    "EventObject": {
+                      "type": "UnityEngine.Transform",
+                      "id": "f3159c34-c608-4bfc-a1d4-71792d4ff588",
+                      "tag": "Untagged",
+                      "name": "StrongerWeapon",
+                      "layer": 0
+                    },
+                    "SpawnPercentage": 3
+                  },
+                  {
+                    "EventName": "Shield",
+                    "EventObject": {
+                      "type": "UnityEngine.Transform",
+                      "id": "bbb9c2bc-f8ef-40f4-8152-0c6c19e3404a",
+                      "tag": "Untagged",
+                      "name": "Shield",
+                      "layer": 0
+                    },
+                    "SpawnPercentage": 1
+                  }
+                ],
+                "timeForNextEvent": 4.0,
+                "nextRound": 7,
+                "percentageForBonus": 40.0
+              },
+              "instanceID": 40868,
+              "instance": null
+            }
+          ]
         }
       }
     },
     {
       "children": [
         99,
-        100,
-        101,
-        102,
-        103
+        104,
+        105,
+        106,
+        107
       ],
       "translation": [
         960.0,
@@ -17096,11 +17210,11 @@
       "name": "HUDCanvas",
       "extras": {
         "metadata": {
-          "guid": "6cb4e424-0cc8-4996-8259-663a7ac22584",
+          "guid": "b20a1927-3b75-426d-9f29-c06e3606c2eb",
           "layer": 5,
           "layermask": 32,
           "layername": "UI",
-          "animator": "6cb4e424-0cc8-4996-8259-663a7ac22584",
+          "animator": "b20a1927-3b75-426d-9f29-c06e3606c2eb",
           "tags": "Untagged Layer5",
           "components": [
             {
@@ -17109,7 +17223,7 @@
               "klass": "TOOLKIT.UserInterface",
               "properties": {
                 "name": "HUDCanvas",
-                "uid": 44772,
+                "uid": 41152,
                 "enabled": true,
                 "adaptive": 0,
                 "document": false,
@@ -17256,11 +17370,11 @@
                             "color": "",
                             "zIndex": 0,
                             "notRenderable": false,
-                            "isVisible": false,
+                            "isVisible": true,
                             "descendantsOnlyPadding": false,
                             "linkOffsetX": "0px",
                             "linkOffsetY": "0px",
-                            "isEnabled": false,
+                            "isEnabled": true,
                             "disabledColor": "#9a9a9a",
                             "disabledColorItem": "#6a6a6a",
                             "name": "HealthUI",
@@ -17280,8 +17394,8 @@
                                 "color": "#ffffff",
                                 "borderColor": "#888888",
                                 "thumbWidth": "20px",
-                                "isVisible": false,
-                                "isEnabled": false,
+                                "isVisible": true,
+                                "isEnabled": true,
                                 "name": "HealthSlider",
                                 "className": "UnitySlider",
                                 "fontSize": "18px",
@@ -17309,7 +17423,7 @@
                                   "events": [],
                                   "eventHost": "slider",
                                   "eventCount": 0,
-                                  "componentInstanceId": 46220
+                                  "componentInstanceId": 42602
                                 },
                                 "children": [
                                   {
@@ -17419,11 +17533,11 @@
                                     "color": "#ffffff",
                                     "zIndex": 0,
                                     "notRenderable": false,
-                                    "isVisible": false,
+                                    "isVisible": true,
                                     "descendantsOnlyPadding": false,
                                     "linkOffsetX": "0px",
                                     "linkOffsetY": "0px",
-                                    "isEnabled": false,
+                                    "isEnabled": true,
                                     "disabledColor": "#9a9a9a",
                                     "disabledColorItem": "#6a6a6a",
                                     "name": "Background",
@@ -17484,11 +17598,11 @@
                                     "color": "",
                                     "zIndex": 0,
                                     "notRenderable": false,
-                                    "isVisible": false,
+                                    "isVisible": true,
                                     "descendantsOnlyPadding": false,
                                     "linkOffsetX": "0px",
                                     "linkOffsetY": "0px",
-                                    "isEnabled": false,
+                                    "isEnabled": true,
                                     "disabledColor": "#9a9a9a",
                                     "disabledColorItem": "#6a6a6a",
                                     "name": "Fill Area",
@@ -17532,11 +17646,11 @@
                                         "color": "#ffffff",
                                         "zIndex": 0,
                                         "notRenderable": false,
-                                        "isVisible": false,
+                                        "isVisible": true,
                                         "descendantsOnlyPadding": false,
                                         "linkOffsetX": "0px",
                                         "linkOffsetY": "0px",
-                                        "isEnabled": false,
+                                        "isEnabled": true,
                                         "disabledColor": "#9a9a9a",
                                         "disabledColorItem": "#6a6a6a",
                                         "name": "Fill",
@@ -17797,7 +17911,7 @@
                   "referencePixelsPerUnit": 100.0
                 }
               },
-              "instanceID": 44772,
+              "instanceID": 41152,
               "instance": null
             },
             {
@@ -17807,13 +17921,13 @@
               "properties": {
                 "playerHealth": {
                   "type": "UnityEngine.Transform",
-                  "id": "071eba22-beec-451e-af67-4fabd33155de",
+                  "id": "649e02c7-4b9b-4888-97f3-012eb9662c75",
                   "tag": "Player",
                   "name": "Player",
                   "layer": 10
                 }
               },
-              "instanceID": 44772,
+              "instanceID": 41152,
               "instance": null
             },
             {
@@ -17825,9 +17939,9 @@
                 "default": null,
                 "clips": [
                   {
-                    "id": 40262,
+                    "id": 40274,
                     "clip": "GameOverClip",
-                    "source": "6cb4e424-0cc8-4996-8259-663a7ac22584",
+                    "source": "b20a1927-3b75-426d-9f29-c06e3606c2eb",
                     "legacy": false,
                     "length": 0.500166655,
                     "looping": false,
@@ -17867,14 +17981,14 @@
                 ],
                 "machine": {
                   "owner": "*",
-                  "hash": 44786,
+                  "hash": 41166,
                   "auto": true,
                   "speed": 1.0,
                   "legacy": false,
                   "layers": [
                     {
                       "owner": "*",
-                      "hash": 1650544624,
+                      "hash": -1175608598,
                       "name": "Base Layer",
                       "index": 0,
                       "entry": "New State",
@@ -17897,7 +18011,7 @@
                   ],
                   "states": [
                     {
-                      "hash": 43364,
+                      "hash": 43378,
                       "name": "GameOver",
                       "tag": "",
                       "time": 0.0,
@@ -17908,7 +18022,7 @@
                       "layerIndex": 0,
                       "played": 0,
                       "machine": "Base Layer",
-                      "motionid": 40262,
+                      "motionid": 40274,
                       "interrupted": false,
                       "apparentSpeed": 0.0,
                       "averageAngularSpeed": 0.0,
@@ -17929,14 +18043,14 @@
                       "speedParameter": "",
                       "speedParameterActive": false,
                       "blendtree": {
-                        "hash": 40262,
+                        "hash": 40274,
                         "name": "GameOverClip",
                         "state": "GameOver",
                         "legacy": false,
                         "looping": false,
                         "children": [
                           {
-                            "hash": 40262,
+                            "hash": 40274,
                             "layerIndex": 0,
                             "cycleOffset": 0,
                             "directBlendParameter": null,
@@ -17987,7 +18101,7 @@
                       "tcurves": null
                     },
                     {
-                      "hash": 43364,
+                      "hash": 43378,
                       "name": "New State",
                       "tag": "",
                       "time": 0.0,
@@ -18021,7 +18135,7 @@
                       "blendtree": null,
                       "transitions": [
                         {
-                          "hash": 43370,
+                          "hash": 43384,
                           "anyState": false,
                           "layerIndex": 0,
                           "machineLayer": "Base Layer",
@@ -18041,7 +18155,7 @@
                           "solo": false,
                           "conditions": [
                             {
-                              "hash": 19458751,
+                              "hash": -2042967729,
                               "mode": 1,
                               "parameter": "GameOver",
                               "threshold": 0.0
@@ -18078,7 +18192,7 @@
                 "leftfeetbottomheight": 0.0,
                 "rightfeetbottomheight": 0.0
               },
-              "instanceID": 44772,
+              "instanceID": 41152,
               "instance": null
             }
           ]
@@ -18086,10 +18200,90 @@
       }
     },
     {
+      "children": [
+        100
+      ],
+      "translation": [
+        -960.0,
+        -540.0,
+        0.0
+      ],
+      "name": "HealthUI",
+      "extras": {
+        "metadata": {
+          "guid": "207c5d30-1ca2-4d5e-8133-5141d0f270be",
+          "layer": 5,
+          "layermask": 32,
+          "layername": "UI",
+          "tags": "Untagged Layer5"
+        }
+      }
+    },
+    {
+      "children": [
+        101,
+        102
+      ],
+      "translation": [
+        132.5,
+        30.0,
+        0.0
+      ],
+      "name": "HealthSlider",
+      "extras": {
+        "metadata": {
+          "guid": "1b0b308c-c39d-427a-8e84-5cde5ebb0bba",
+          "layer": 5,
+          "layermask": 32,
+          "layername": "UI",
+          "tags": "Untagged Layer5"
+        }
+      }
+    },
+    {
+      "name": "Background",
+      "extras": {
+        "metadata": {
+          "guid": "2dc471c0-04a0-4628-a818-b664b4ef4055",
+          "layer": 5,
+          "layermask": 32,
+          "layername": "UI",
+          "tags": "Untagged Layer5"
+        }
+      }
+    },
+    {
+      "children": [
+        103
+      ],
+      "name": "Fill Area",
+      "extras": {
+        "metadata": {
+          "guid": "fb124759-35ce-4e1e-8e28-1a82e6c64c1c",
+          "layer": 5,
+          "layermask": 32,
+          "layername": "UI",
+          "tags": "Untagged Layer5"
+        }
+      }
+    },
+    {
+      "name": "Fill",
+      "extras": {
+        "metadata": {
+          "guid": "2e631444-e62f-480a-a5b1-80f6a3ede687",
+          "layer": 5,
+          "layermask": 32,
+          "layername": "UI",
+          "tags": "Untagged Layer5"
+        }
+      }
+    },
+    {
       "name": "ScreenFader",
       "extras": {
         "metadata": {
-          "guid": "761f1484-9947-4589-a73a-b9833f6bd3b0",
+          "guid": "7e5fda2c-588e-47b7-8e68-e21ae84fdc93",
           "layer": 5,
           "layermask": 32,
           "layername": "UI",
@@ -18101,7 +18295,7 @@
       "name": "GameOverText",
       "extras": {
         "metadata": {
-          "guid": "61eb9e84-2149-4716-adce-85fafd8e297c",
+          "guid": "7098b316-7b84-4bd8-ab6a-7b25e22c5752",
           "layer": 5,
           "layermask": 32,
           "layername": "UI",
@@ -18110,39 +18304,10 @@
       }
     },
     {
-      "translation": [
-        0.0,
-        505.0,
-        0.0
-      ],
-      "name": "ScoreText",
-      "extras": {
-        "metadata": {
-          "guid": "581b5db7-c256-48ae-85f4-1928f0dcd11e",
-          "layer": 5,
-          "layermask": 32,
-          "layername": "UI",
-          "tags": "Untagged Layer5",
-          "components": [
-            {
-              "alias": "script",
-              "order": 0,
-              "klass": "PROJECT.ScoreManager",
-              "properties": {
-                "score": 0
-              },
-              "instanceID": 44296,
-              "instance": null
-            }
-          ]
-        }
-      }
-    },
-    {
       "name": "DamageImage",
       "extras": {
         "metadata": {
-          "guid": "17430105-a233-406a-981a-77dfb19bdf4e",
+          "guid": "ccf67be9-9199-455b-96b9-0e17e0a8b69f",
           "layer": 5,
           "layermask": 32,
           "layername": "UI",
@@ -18159,7 +18324,7 @@
       "name": "Heart",
       "extras": {
         "metadata": {
-          "guid": "48f53237-1d99-4b50-9ae8-245127e25d99",
+          "guid": "e17a7ae6-b3b2-416e-a883-a069b8f1d272",
           "layer": 5,
           "layermask": 32,
           "layername": "UI",
@@ -18169,7 +18334,7 @@
     },
     {
       "children": [
-        105
+        109
       ],
       "scale": [
         0.0,
@@ -18179,7 +18344,7 @@
       "name": "MenuCanvas",
       "extras": {
         "metadata": {
-          "guid": "9e6913e5-5f5a-4af4-ad8d-75c2ab030e63",
+          "guid": "d2cee8d9-8150-4561-b679-55e2e2a40fb5",
           "layer": 5,
           "layermask": 32,
           "layername": "UI",
@@ -18190,7 +18355,7 @@
               "order": 0,
               "klass": "PROJECT.PauseManager",
               "properties": null,
-              "instanceID": 44266,
+              "instanceID": 40656,
               "instance": null
             }
           ]
@@ -18206,7 +18371,7 @@
       "name": "PausePanel",
       "extras": {
         "metadata": {
-          "guid": "f93c3fc1-001f-478e-93ae-d6fa859947b1",
+          "guid": "243df2d3-32f4-4a2b-b44d-df933ad4d115",
           "layer": 5,
           "layermask": 32,
           "layername": "UI",
@@ -18218,23 +18383,23 @@
       "name": "EventSystem",
       "extras": {
         "metadata": {
-          "guid": "574a5f0b-6628-4ec3-9b28-ab951b87ca7c"
+          "guid": "b16b93ec-f1ee-4fc4-82d9-755caa890767"
         }
       }
     },
     {
       "children": [
-        108,
-        117,
-        122,
-        133,
-        142,
-        151
+        112,
+        121,
+        126,
+        137,
+        146,
+        155
       ],
       "name": "SpawnPoints",
       "extras": {
         "metadata": {
-          "guid": "887291a2-1f74-49db-8fca-3bab0d1007dc",
+          "guid": "85adc035-5d16-4c59-81cd-718764721958",
           "group": "SpawnPoints",
           "tags": "SpawnPoints Layer0"
         }
@@ -18242,19 +18407,19 @@
     },
     {
       "children": [
-        109,
-        110,
-        111,
-        112,
         113,
         114,
         115,
-        116
+        116,
+        117,
+        118,
+        119,
+        120
       ],
       "name": "HeartSpawnPoints",
       "extras": {
         "metadata": {
-          "guid": "55978571-b610-4848-9807-6d012c0bd463"
+          "guid": "3f547456-1f94-4029-a3fd-2a38bef8bd1a"
         }
       }
     },
@@ -18267,7 +18432,7 @@
       "name": "S0",
       "extras": {
         "metadata": {
-          "guid": "de0de4aa-11f6-47b6-bae2-cd31852b9019"
+          "guid": "090da47a-9b00-4493-97ac-5dda9c505f6a"
         }
       }
     },
@@ -18280,7 +18445,7 @@
       "name": "S1",
       "extras": {
         "metadata": {
-          "guid": "a73b1e25-59d5-4b92-a62a-3bebcb1b121e"
+          "guid": "15cf7ccb-4e47-4a0e-aa63-35c0e5091520"
         }
       }
     },
@@ -18293,7 +18458,7 @@
       "name": "S2",
       "extras": {
         "metadata": {
-          "guid": "4f9d8bb2-4d83-4f7b-88b2-2acbdfe7593a"
+          "guid": "e9d69744-9455-47f4-af96-7de3e438a5e5"
         }
       }
     },
@@ -18306,7 +18471,7 @@
       "name": "S3",
       "extras": {
         "metadata": {
-          "guid": "d0a7bbc1-fd74-457e-b60f-cb328e6b5060"
+          "guid": "b646d228-0a5c-45b0-a1b1-30b07ad85cf8"
         }
       }
     },
@@ -18319,7 +18484,7 @@
       "name": "S4",
       "extras": {
         "metadata": {
-          "guid": "395987eb-db5d-4335-8934-cd98deb3df78"
+          "guid": "c14bec6d-c483-4721-95a5-d9024937977d"
         }
       }
     },
@@ -18332,7 +18497,7 @@
       "name": "S5",
       "extras": {
         "metadata": {
-          "guid": "7449e690-daa2-46b9-902f-bce29c857145"
+          "guid": "ec76b483-fd6b-4311-8359-b79d24260d08"
         }
       }
     },
@@ -18345,7 +18510,7 @@
       "name": "S6",
       "extras": {
         "metadata": {
-          "guid": "87278e9a-a1a8-4e36-948c-ea52ce9a5c05"
+          "guid": "8d099069-4eb5-4b0e-9e76-2630afcc12e6"
         }
       }
     },
@@ -18353,21 +18518,21 @@
       "name": "S7",
       "extras": {
         "metadata": {
-          "guid": "e9e4b5d5-20ca-4f88-9864-f57d8b37c0ed"
+          "guid": "721ee90f-4072-46e0-9cd1-6e1504e5a9c0"
         }
       }
     },
     {
       "children": [
-        118,
-        119,
-        120,
-        121
+        122,
+        123,
+        124,
+        125
       ],
       "name": "EnemySpawnPoints",
       "extras": {
         "metadata": {
-          "guid": "ab3c2b85-37a1-4457-bc33-7338333a4d5d"
+          "guid": "81124175-37c9-4f73-b546-8f15f2580021"
         }
       }
     },
@@ -18380,7 +18545,7 @@
       "name": "S0",
       "extras": {
         "metadata": {
-          "guid": "688729c1-648b-42a6-bd6e-07bed6c8f091"
+          "guid": "21c2d259-410d-4767-a04f-d018342248b2"
         }
       }
     },
@@ -18393,7 +18558,7 @@
       "name": "S1",
       "extras": {
         "metadata": {
-          "guid": "ac932d3f-6748-45bd-a706-bcc8526ce71b"
+          "guid": "89ed371f-e878-441f-bbfb-8cdca470baa0"
         }
       }
     },
@@ -18406,7 +18571,7 @@
       "name": "S2",
       "extras": {
         "metadata": {
-          "guid": "2c07bc30-db5b-448d-adc7-048fc44252dd"
+          "guid": "6b129eb5-f4f3-4110-b7a4-d60662314fc3"
         }
       }
     },
@@ -18419,27 +18584,27 @@
       "name": "S3",
       "extras": {
         "metadata": {
-          "guid": "6748dea6-4267-4a3e-bccb-173eb2135f03"
+          "guid": "f3555338-15cf-42c7-9ebe-4fbca6792f30"
         }
       }
     },
     {
       "children": [
-        123,
-        124,
-        125,
-        126,
         127,
         128,
         129,
         130,
         131,
-        132
+        132,
+        133,
+        134,
+        135,
+        136
       ],
       "name": "PuddleSpawnPoints",
       "extras": {
         "metadata": {
-          "guid": "c7415cd9-f403-4656-ba15-5c8a5d4c4bda",
+          "guid": "94828a5e-d152-4c63-84ed-7aca4ade6122",
           "group": "PuddleSpawn",
           "tags": "PuddleSpawn Layer0"
         }
@@ -18454,7 +18619,7 @@
       "name": "S0",
       "extras": {
         "metadata": {
-          "guid": "0cf87616-3a76-445f-a7f2-f06e860811b3"
+          "guid": "0135f971-daec-4cca-92a6-706114bd9625"
         }
       }
     },
@@ -18467,7 +18632,7 @@
       "name": "S1",
       "extras": {
         "metadata": {
-          "guid": "3b6d877c-58ff-4dfd-95c1-879e2b16bbdd"
+          "guid": "6d96ba7c-f313-453b-80e2-f45942262496"
         }
       }
     },
@@ -18480,7 +18645,7 @@
       "name": "S2",
       "extras": {
         "metadata": {
-          "guid": "03f33177-23c5-4187-87e9-f48edac30a66"
+          "guid": "0016b59e-412a-4c44-b885-5977e4bb01bd"
         }
       }
     },
@@ -18493,7 +18658,7 @@
       "name": "S3",
       "extras": {
         "metadata": {
-          "guid": "b327f252-f4eb-44d7-b9be-1de36ae62892"
+          "guid": "f56caf1f-829e-415b-b84b-9eaadb503806"
         }
       }
     },
@@ -18506,7 +18671,7 @@
       "name": "S4",
       "extras": {
         "metadata": {
-          "guid": "f1a23f44-d48e-4c91-931c-a319d6381f60"
+          "guid": "235e32b1-35c0-4302-a360-e9e6ed5f1544"
         }
       }
     },
@@ -18519,7 +18684,7 @@
       "name": "S5",
       "extras": {
         "metadata": {
-          "guid": "d80ff96e-2208-4921-8a61-45f2a8fe40b8"
+          "guid": "13af0b3f-d78a-4a12-8be4-c015f7401468"
         }
       }
     },
@@ -18532,7 +18697,7 @@
       "name": "S6",
       "extras": {
         "metadata": {
-          "guid": "591732f3-b507-47a5-8185-3468994c44c2"
+          "guid": "163d3475-0b40-4697-ab4e-f21db354c5dd"
         }
       }
     },
@@ -18545,7 +18710,7 @@
       "name": "S7",
       "extras": {
         "metadata": {
-          "guid": "646ad1de-ee05-4820-92ee-442a63816e05"
+          "guid": "83cad769-f231-4a29-ba88-fa193cf9d0f2"
         }
       }
     },
@@ -18558,7 +18723,7 @@
       "name": "S8",
       "extras": {
         "metadata": {
-          "guid": "22bfc31b-97cb-4552-918f-f76cfa47455c"
+          "guid": "c644444c-06a7-4842-b2d9-09f6910d25bf"
         }
       }
     },
@@ -18571,25 +18736,25 @@
       "name": "S9",
       "extras": {
         "metadata": {
-          "guid": "29f4cbc8-eb44-4cab-8b5b-0fcf9b9a8cce"
+          "guid": "5e992c7b-cd22-486a-b888-92ef8dc90a1b"
         }
       }
     },
     {
       "children": [
-        134,
-        135,
-        136,
-        137,
         138,
         139,
         140,
-        141
+        141,
+        142,
+        143,
+        144,
+        145
       ],
       "name": "TNTSpawnPoints",
       "extras": {
         "metadata": {
-          "guid": "853d66a4-7e50-4815-bb6b-20a9e5ce2c81"
+          "guid": "3b0b3947-04c4-4d78-97b1-5cfed06ebfcc"
         }
       }
     },
@@ -18602,7 +18767,7 @@
       "name": "S0",
       "extras": {
         "metadata": {
-          "guid": "3119f2bc-ddfe-45ff-a9a3-f0e0552c4db9"
+          "guid": "41808c18-c0a2-40a0-ba51-e4da92a2b062"
         }
       }
     },
@@ -18615,7 +18780,7 @@
       "name": "S1",
       "extras": {
         "metadata": {
-          "guid": "2b022d1e-f47c-4a98-8b47-2fddea0ca9bb"
+          "guid": "ea4de468-af7f-421b-8ef5-c3da3ca2d708"
         }
       }
     },
@@ -18628,7 +18793,7 @@
       "name": "S2",
       "extras": {
         "metadata": {
-          "guid": "c3c226f8-6c32-4780-8334-123ca08f48e9"
+          "guid": "b306bd8d-dc2c-40af-a085-2d327c6a31aa"
         }
       }
     },
@@ -18641,7 +18806,7 @@
       "name": "S3",
       "extras": {
         "metadata": {
-          "guid": "547c4390-0c24-49eb-ad4f-22ba970ecd61"
+          "guid": "f989aab5-98f5-4ee6-816d-3436f3d7f87a"
         }
       }
     },
@@ -18654,7 +18819,7 @@
       "name": "S4",
       "extras": {
         "metadata": {
-          "guid": "d891d548-cb65-401b-8d99-13481c024aed"
+          "guid": "6d513e5c-da24-44aa-b83f-99aac39116fc"
         }
       }
     },
@@ -18667,7 +18832,7 @@
       "name": "S5",
       "extras": {
         "metadata": {
-          "guid": "f71bcbe4-be97-46ce-a312-e05d60191e62"
+          "guid": "8007c9af-5558-4a65-ad21-a054c6f00232"
         }
       }
     },
@@ -18680,7 +18845,7 @@
       "name": "S6",
       "extras": {
         "metadata": {
-          "guid": "523ac601-8887-4164-a1be-927b95d6516c"
+          "guid": "790109ea-09d8-4ad0-976a-8b55b17d9f19"
         }
       }
     },
@@ -18693,25 +18858,25 @@
       "name": "S7",
       "extras": {
         "metadata": {
-          "guid": "4cc85f6c-0499-4518-bf00-a15a87ea8153"
+          "guid": "cae66928-ac3c-492f-93b2-1ca5398ac090"
         }
       }
     },
     {
       "children": [
-        143,
-        144,
-        145,
-        146,
         147,
         148,
         149,
-        150
+        150,
+        151,
+        152,
+        153,
+        154
       ],
       "name": "StrongerWeaponSpawnPoints",
       "extras": {
         "metadata": {
-          "guid": "dbecea01-ecfb-4d49-8991-5e13164d3c34"
+          "guid": "1ccecdbc-f3eb-41f5-97d2-5282609d3116"
         }
       }
     },
@@ -18724,7 +18889,7 @@
       "name": "S0",
       "extras": {
         "metadata": {
-          "guid": "6191f6f5-29f3-480d-a370-b20ed5f7d48b"
+          "guid": "4ed49ef3-d6eb-46bc-82b9-888d01cf89d1"
         }
       }
     },
@@ -18737,7 +18902,7 @@
       "name": "S1",
       "extras": {
         "metadata": {
-          "guid": "38ae5703-7fb6-46f7-ab98-b8de0d3edebe"
+          "guid": "8258e806-5ea6-486e-b235-8013f94b25cd"
         }
       }
     },
@@ -18750,7 +18915,7 @@
       "name": "S2",
       "extras": {
         "metadata": {
-          "guid": "9f57b3cd-0267-49c6-946c-9b76c488faea"
+          "guid": "51205350-4362-4cd0-b0ed-98b4f879c373"
         }
       }
     },
@@ -18763,7 +18928,7 @@
       "name": "S3",
       "extras": {
         "metadata": {
-          "guid": "38ed86a3-208e-4392-b48f-285ec779c09d"
+          "guid": "0e2d8a1d-f3f6-4bd9-870b-2fe19fe24d35"
         }
       }
     },
@@ -18776,7 +18941,7 @@
       "name": "S4",
       "extras": {
         "metadata": {
-          "guid": "1dc3c342-bdb6-4ab3-a773-70082e088511"
+          "guid": "97624431-f5b5-4e59-a535-415c5d12f2b0"
         }
       }
     },
@@ -18789,7 +18954,7 @@
       "name": "S5",
       "extras": {
         "metadata": {
-          "guid": "a5fa6afe-a90f-4f9d-9ca6-00338f80b40b"
+          "guid": "49323b95-d388-4c71-a8a4-4f67e33e774c"
         }
       }
     },
@@ -18802,7 +18967,7 @@
       "name": "S6",
       "extras": {
         "metadata": {
-          "guid": "21e36481-dce6-4c50-89ef-882704c20b14"
+          "guid": "58160679-67c8-4817-83de-b14f0f69bc9e"
         }
       }
     },
@@ -18815,23 +18980,23 @@
       "name": "S7",
       "extras": {
         "metadata": {
-          "guid": "e13f8b35-f9bf-4b8c-af8a-ac8d6d8ebdec"
+          "guid": "0df20951-3cdd-494b-be0b-283ab184ad8a"
         }
       }
     },
     {
       "children": [
-        152,
-        153,
-        154,
-        155,
         156,
-        157
+        157,
+        158,
+        159,
+        160,
+        161
       ],
       "name": "ShieldSpawnPoints",
       "extras": {
         "metadata": {
-          "guid": "96ebf24a-e7a5-4107-8667-18a50a450b86"
+          "guid": "42f768b8-c2b7-419f-9c05-846482955984"
         }
       }
     },
@@ -18844,7 +19009,7 @@
       "name": "S0",
       "extras": {
         "metadata": {
-          "guid": "21837b2f-856b-4247-9a59-0127109705df"
+          "guid": "cca570b4-b08f-43f8-a071-a000e60593cc"
         }
       }
     },
@@ -18857,7 +19022,7 @@
       "name": "S1",
       "extras": {
         "metadata": {
-          "guid": "624e98fe-a38c-4073-874b-2762f58e51ab"
+          "guid": "fe72b56f-52d9-4919-99a2-3e3476527807"
         }
       }
     },
@@ -18870,7 +19035,7 @@
       "name": "S2",
       "extras": {
         "metadata": {
-          "guid": "528aa4fa-71d1-4432-bf83-31ca7d99875c"
+          "guid": "cbc2cdc1-203b-45f3-a5f6-5591ccc8a4cb"
         }
       }
     },
@@ -18883,7 +19048,7 @@
       "name": "S3",
       "extras": {
         "metadata": {
-          "guid": "4975f8e0-5a50-4fe5-801b-e23a69cb2041"
+          "guid": "ac8ba07e-23ba-49ea-a5b7-8c7f888c2b41"
         }
       }
     },
@@ -18896,7 +19061,7 @@
       "name": "S4",
       "extras": {
         "metadata": {
-          "guid": "16f3e526-1c7d-45e7-92e8-6bbf82f48930"
+          "guid": "2b558e18-582b-4f5c-b8ed-4c2a4dc2a3bf"
         }
       }
     },
@@ -18909,7 +19074,7 @@
       "name": "S5",
       "extras": {
         "metadata": {
-          "guid": "bd300218-02ad-43ba-b4e5-ffff7b7591af"
+          "guid": "53d8c88e-c7a0-457a-a66d-0c587254472f"
         }
       }
     },
@@ -18917,7 +19082,7 @@
       "name": "BackgroundMusic",
       "extras": {
         "metadata": {
-          "guid": "8d74b5a7-1b77-4352-a633-ca2d3ee4b4db",
+          "guid": "e230de0a-3e48-4342-87ce-a438d978679b",
           "components": [
             {
               "alias": "script",
@@ -18945,7 +19110,7 @@
                 "bypasslistenereffects": false,
                 "enablelegacyaudio": false
               },
-              "instanceID": 44434,
+              "instanceID": 40816,
               "instance": null
             }
           ]
@@ -18956,7 +19121,7 @@
       "name": "SceneController",
       "extras": {
         "metadata": {
-          "guid": "73605e4b-ec4e-4a5a-86d2-c9be7366ed08",
+          "guid": "a45a6ff7-b730-4fa7-9c1a-3dcdc4fb6d56",
           "components": [
             {
               "alias": "script",
@@ -18976,7 +19141,7 @@
                   "a": 1.0
                 }
               },
-              "instanceID": 44642,
+              "instanceID": 41022,
               "instance": null
             },
             {
@@ -19002,7 +19167,7 @@
                   "tnt.glb"
                 ]
               },
-              "instanceID": 44642,
+              "instanceID": 41022,
               "instance": null
             }
           ]
@@ -19062,11 +19227,11 @@
         95,
         97,
         98,
-        104,
-        106,
-        107,
-        158,
-        159
+        108,
+        110,
+        111,
+        162,
+        163
       ],
       "name": "game",
       "extras": {

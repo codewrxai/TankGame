@@ -1,6 +1,6 @@
 namespace PROJECT {
   export class PlayerMovement extends TOOLKIT.ScriptComponent {
-    public speed: number = 12;
+    public speed: number = 22;
     public rotateSpeed: number = 180;
     private rotateVector: BABYLON.Vector3 = BABYLON.Vector3.Zero();
 

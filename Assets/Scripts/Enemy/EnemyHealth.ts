@@ -7,6 +7,7 @@ namespace PROJECT {
 
     private deathAudio: TOOLKIT.AudioSource; // Reference to the audio source.
     private deathParticles: BABYLON.ParticleSystem; // Reference to the particle system that plays when the enemy is damaged.
+    private enemyParticles: PROJECT.EnemyParticle; // Reference to the enemy particle system component.
     private boxCollider: BABYLON.Mesh; // Reference to the box collider.
     private isDead: boolean;
 
@@ -18,6 +19,7 @@ namespace PROJECT {
       // Setting up the references.
       //this.deathAudio = TOOLKIT.SceneManager.GetComponent(this.transform, "TOOLKIT.AudioSource") as TOOLKIT.AudioSource;
       //this.deathParticles = TOOLKIT.SceneManager.GetComponent(this.transform, "BABYLON.ParticleSystem") as unknown as BABYLON.ParticleSystem;
+      this.enemyParticles = TOOLKIT.SceneManager.GetComponent(this.transform, "PROJECT.EnemyParticles") as PROJECT.EnemyParticle;
       this.boxCollider = this.transform as BABYLON.Mesh;
 
       // Setting the current health when the enemy first spawns.
@@ -48,6 +50,11 @@ namespace PROJECT {
       // Turn the collider into a trigger so shots can pass through it.
       if (this.boxCollider && "isPickable" in this.boxCollider) {
         (this.boxCollider as BABYLON.Mesh).isPickable = false;
+      }
+
+      // Play death particles
+      if (this.enemyParticles) {
+        this.enemyParticles.playDeathParticles();
       }
 
       if (this.deathParticles) {

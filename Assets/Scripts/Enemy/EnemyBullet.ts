@@ -1,6 +1,7 @@
 namespace PROJECT {
   export class EnemyBullet extends TOOLKIT.ScriptComponent {
     private enemyShooting: PROJECT.EnemyShooting;
+    private explosionParticles: PROJECT.BulletExplosionParticles;
     private isDestroyed: boolean = false;
 
     constructor(transform: BABYLON.TransformNode, scene: BABYLON.Scene, properties: any = {}, alias: string = "PROJECT.EnemyBullet") {
@@ -11,6 +12,10 @@ namespace PROJECT {
       this.enableCollisionEvents(); // Enable collision events
       let enemy = TOOLKIT.SceneManager.FindGameObjectWithTag(this.scene, "Enemy") as BABYLON.TransformNode;
       this.enemyShooting = TOOLKIT.SceneManager.GetComponent(enemy, "PROJECT.EnemyShooting") as PROJECT.EnemyShooting;
+      
+      // Get explosion particles component
+      this.explosionParticles = TOOLKIT.SceneManager.GetComponent(this.transform, "PROJECT.BulletExplosionParticles") as PROJECT.BulletExplosionParticles;
+      
       // Debug collider setup
       if (!this.transform.physicsBody) {
         console.warn("EnemyBullet: No physicsBody on bullet!");
@@ -38,8 +43,18 @@ namespace PROJECT {
           playerHealth.takeDamage(this.enemyShooting.damagePerShot);
         }
       }
-      // Destroy the bullet itself
-      TOOLKIT.SceneManager.SafeDestroy(this.transform);
+      
+      // Play explosion particles at collision point
+      if (this.explosionParticles) {
+        this.explosionParticles.playExplosion(this.transform.position);
+      }
+      
+      // Destroy the bullet after short delay to let particles play
+      setTimeout(() => {
+        if (this.transform && !this.transform.isDisposed()) {
+          TOOLKIT.SceneManager.SafeDestroy(this.transform);
+        }
+      }, 800);
     }
   }
 }

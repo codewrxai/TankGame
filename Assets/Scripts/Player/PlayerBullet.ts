@@ -1,7 +1,7 @@
 namespace PROJECT {
   export class PlayerBullet extends TOOLKIT.ScriptComponent {
     private playerShooting: PROJECT.PlayerShooting;
-    private hitParticles: BABYLON.ParticleSystem;
+    private explosionParticles: PROJECT.BulletExplosionParticles;
     private hitAudio: TOOLKIT.AudioSource;
     private isDestroyed: boolean = false;
 
@@ -15,20 +15,13 @@ namespace PROJECT {
       let player = TOOLKIT.SceneManager.FindGameObjectWithTag(this.scene, "Player") as BABYLON.TransformNode;
       this.playerShooting = TOOLKIT.SceneManager.GetComponent(player, "PROJECT.PlayerShooting") as PROJECT.PlayerShooting;
       
-      // Get child components for particle and audio
+      // Get explosion particles component
+      this.explosionParticles = TOOLKIT.SceneManager.GetComponent(this.transform, "PROJECT.BulletExplosionParticles") as PROJECT.BulletExplosionParticles;
+      
+      // Get audio source from child
       const children = this.transform.getChildren();
       if (children.length > 0) {
         const firstChild = children[0] as BABYLON.TransformNode;
-        
-        // Find particle system
-        for (let ps of this.scene.particleSystems) {
-          if (ps.emitter === firstChild && ps instanceof BABYLON.ParticleSystem) {
-            this.hitParticles = ps as BABYLON.ParticleSystem;
-            break;
-          }
-        }
-        
-        // Find audio source
         this.hitAudio = TOOLKIT.SceneManager.FindScriptComponent(firstChild, "TOOLKIT.AudioSource") as TOOLKIT.AudioSource;
       }
       
@@ -58,39 +51,22 @@ namespace PROJECT {
         }
       }
       
-      // Handle particle and audio effects
-      if (this.hitParticles) {
-        const particleEmitter = this.hitParticles.emitter as BABYLON.TransformNode;
-        
-        // Unparent the particles from the bullet
-        if (particleEmitter) {
-          particleEmitter.parent = null;
-        }
-        
-        // Play particle system
-        this.hitParticles.start();
-        
-        // Play audio
-        if (this.hitAudio) {
-          this.hitAudio.play();
-        }
-        
-        // Schedule particle cleanup after duration
-        if (particleEmitter) {
-          const duration = this.hitParticles.targetStopDuration || 2.0;
-          this.scheduleParticleCleanup(particleEmitter, duration);
-        }
+      // Play explosion particles at collision point
+      if (this.explosionParticles) {
+        this.explosionParticles.playExplosion(this.transform.position);
       }
       
-      // Destroy the bullet
-      TOOLKIT.SceneManager.SafeDestroy(this.transform);
-    }
-    
-    private async scheduleParticleCleanup(emitter: BABYLON.TransformNode, duration: number): Promise<void> {
-      await TOOLKIT.SceneManager.WaitForSeconds(duration);
-      if (emitter && !emitter.isDisposed()) {
-        TOOLKIT.SceneManager.SafeDestroy(emitter);
+      // Play audio
+      if (this.hitAudio) {
+        this.hitAudio.play();
       }
+      
+      // Destroy the bullet after short delay to let particles and audio play
+      setTimeout(() => {
+        if (this.transform && !this.transform.isDisposed()) {
+          TOOLKIT.SceneManager.SafeDestroy(this.transform);
+        }
+      }, 800);
     }
   }
 }
